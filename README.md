@@ -1,6 +1,6 @@
 My First JavaScript App!
 
-Chapter 7 of your textbook includes a small Address Book example application.
+Chapter 6 of your textbook includes a small Address Book example application.
 
 Review this code, and then make a similar application that holds information for something (other than addresses) that you personally care about - your family or pets, movies, games, books - whatever you like.  The address book only holds a name and email.  Try to select an object that is more complex, but not too complex.  Make it interesting though, as you'll work with this for the next assignment as well (and maybe one more...)
 
