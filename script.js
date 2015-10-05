@@ -1,8 +1,8 @@
 /* create some data in the form of a JSON object you can consume and loop through 
-*/
+ */
 
 var wildAnimals = {
-    "animalList" : [
+    "animalList": [
         {
             "name": "Lion",
             "picture": "images/lion.jpg",
@@ -20,74 +20,52 @@ var wildAnimals = {
             "picture": "images/giraffe.jpg",
         },
         {
-            "name": "Eagle",
-            "picture": "images/eagle.jpg",
+            "name": "Zebra",
+            "picture": "images/zebra.jpg",
         }
     ]
 };
 
 
-(function(){
+(function () {
 
-        
-    var object = wildAnimals.animalList// save the JSON object
-        wildAnimalsCount = object.length, 
-            
-        target = document.getElementsByTagName("body")[0];
-         var i; 
+
+        var object = wildAnimals.animalList, // save the JSON object
+        wildAnimalsCount = object.length,
+            target = document.getElementsByTagName("body")[0];
+    var i;
     
-    if(wildAnimalsCount > 0) {
-    
-           
+    if (wildAnimalsCount > 0) {
         for (i = 0; i < wildAnimalsCount; i = i + 1) {
-            
-                
             var item = object[i],
                 name = item.name,
-                picture = item.picture; 
+                picture = item.picture;
+            
             var p = document.createElement("p");
             var text = document.createTextNode(name);
             p.appendChild(text);
             target.appendChild(p);
-            
+
             var img = document.createElement("img");
-              img.setAttribute("class","hide");
-            img.setAttribute("src",picture);
+            img.setAttribute("class", "hide");
+            img.setAttribute("src", picture);
             target.appendChild(img);
-            p.onclick = function(){
+
+            p.onclick = function () {
                 var img = this.nextElementSibling;
-                 
-                
-                    var allImage = document.getElementsByTagName("img");
-                    var i;
-                
-                    for(i=0; allImage.length > i; i++){
-                        var currImg = allImage[i];
+
+
+                var allImage = document.getElementsByTagName("img");
+                var i;
+
+                for (i = 0; i < allImage.length; i++) {
+                    var currImg = allImage[i];
                     currImg.setAttribute("class", "hide")
-                    }
-                    
-                 img.removeAttribute("class");
-                    
+                }
+
+                img.removeAttribute("class");
+
             }
-              
-                
-                
-            
-            
-            //target.innerHTML +='<p>' + name + '</p>';
-           //name.onclick += img src="' + picture +'";
-            
-            
-           //target.innerHTML += '<p>'name.onclick.show(picture)'<p>';
-               
-         
-            
-            
-            
-           //target.innerHTML += '<p><img src="' + picture +'">' + name + '</p>';    
-           
-       
-    
         } 
     
     } 
