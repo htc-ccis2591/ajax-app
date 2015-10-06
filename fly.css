@@ -1,0 +1,53 @@
+section {
+    display: block;
+    padding: 15px 25px;
+}
+
+body {
+    margin: auto;
+    color: #666666;
+    background: #CCCCCC;
+    font-family: Papyrus, sans-serif;
+}
+
+.menu-item {
+   
+    font-family: sans-serif;
+    font-size: 120%;
+    cursor: pointer;
+    color: forestgreen;
+}
+
+ul{
+    list-style-type: none;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000000;
+
+}
+
+
+
+header {
+    font-size: 50px;
+    background-color: #000033;
+    color: #FFFFFF;
+    background-image: url(images/banner4.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    text-shadow: 2px 2px 2px #CC3300;
+
+}
+
+h1 {
+    
+    font-size: 60px;
+    font-color: black;
+    text-align: center;
+    text-shadow: 2px 2px 2px #000000;
+    
+}
+
+footer {
+    position: absolute;
+    font-family: sans-serif;
+}
