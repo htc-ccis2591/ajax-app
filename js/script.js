@@ -1,88 +1,109 @@
-function generate_table() {
-    
-    var flies = {
+(function () {
+    var Items = {
 
-            "flybox": [
 
-                {
-                    "Fly Id": "1",
-                    "name": "Royal Trude",
-                    "type": "Dry",
-                    "image": "images/RoyalTrude.jpg"
-                },
+        "featuredFlies": [
+            {
+                "flyId": "1",
+                "name": "Royal Trude",
+                "image": "images/RoyalTrude.jpg",
+                "description": "Bring up huge trout with this big dry fly pattern imitative of a large stonefly."
+            },
 
-                {
-                    "Fly Id": "2",
-                    "name": "Stonefly",
-                    "type": "Dry",
-                    "image": "images/Stonefly.jpg"
-                },
+            {
+                "flyId": "2",
+                "name": "Stonefly",
+                "image": "images/Stonefly.jpg",
+                "description": "Drive trout wild with this stimulator fly pattern."
+            },
 
-                {
-                    "Fly Id": "3",
-                    "name": "Turk's Tarantula",
-                    "type": "Wet",
-                    "image": "images/TurksTarantula.jpg"
-                },
+            {
+                "flyId": "3",
+                "name": "Turk's Tarantula",
+                "image": "images/TurksTarantula.jpg",
+                "description": "An attractor dry fly pattern that looks like a variety of trout foods."
+            },
 
-                {
-                    "Fly Id": "4",
-                    "name": "Cripple Dun BWO",
-                    "type": "Wet",
-                    "image": "images/CrippleDunBWO.jpg"
-                },
+            {
+                "flyId": "4",
+                "name": "Cripple Dun BWO",
+                "image": "images/CrippleDunBWO.jpg",
+                "description": "This BWO dry fly will prove itself over picky trout."
+            },
 
-                {
-                    "Fly Id": "5",
-                    "name": "Ausable Wulff",
-                    "type": "Dry",
-                    "image": "images/AusableWulff.jpg"
-                },
+            {
+                "flyId": "5",
+                "name": "Ausable Wulff",
+                "image": "images/AusableWulff.jpg",
+                "description": "This is an excellent fast-water Hairwing fly with lighter and buggier colors that trout love."
+            },
 
-                {
-                    "Fly Id": "6",
-                    "name": "Splitsville Flying Ant",
-                    "type": "Wet",
-                    "image": "images/SplitsvilleFlyingAnt.jpg"
-                },
+            {
+                "flyId": "6",
+                "name": "Splitsville Flying Ant",
+                "image": "images/SplitsvilleFlyingAnt.jpg",
+                "description": "Dry fly fishing with this innovative pattern will draw strikes over and over."
+            },
 
-                {
-                    "Fly Id": "7",
-                    "name": "Sedgehammer",
-                    "type": "Dry",
-                    "image": "images/Sedgehammer.jpg"
-                },
+            {
+                "flyId": "7",
+                "name": "Sedgehammer",
+                "image": "images/Sedgehammer.jpg",
+                "description": "Dominate on still water with this fantastic fly pattern."
+            },
 
-                {
-                    "Fly Id": "8",
-                    "name": "Lightgning Bug",
-                    "type": "Wet",
-                    "image": "images/LightningBug.jpg"
-                }
-
-            ]
-var tblFlies = document.createElement("TABLE");
-    table.border = "1";
-    var columnCount = flies[0].length;
-            var row = table.insertRow(-1);
-    for (var i = 0; i < columnCount; i++) {
-                var headerCell = document.createElement("TH");
-                headerCell.innerHTML = flies[0][i];
-                row.appendChild(headerCell);
+            {
+                "flyId": "8",
+                "name": "Lightning Bug",
+                "image": "images/LightningBug.jpg",
+                "description": "A prospecting nymph fly that trout can't resist."
             }
+        ]
+
+    };
+    var aside = document.getElementsByTagName("aside")[0];
+    aside.style.listStylePosition = "center";
+    document.querySelector(".hide").style.display = "block";
+
+    var rotatingItems = Items.featuredFlies;
+    for (i = 0; i < rotatingItems.length; i++) {
+
+        itemCount = rotatingItems[i];
+
+        var featuredItems = document.getElementById("featured-items");
+
+        var pictureElement = document.createElement("img");
+        pictureElement.setAttribute("src", itemCount.image);
+        //console.log(pictureElement);
+        featuredItems.appendChild(pictureElement);
 
 
-            for (var i = 1; i < flies.length; i++) {
-                row = table.insertRow(-1);
-                for (var j = 0; j < columnCount; j++) {
-                    var cell = row.insertCell(-1);
-                    cell.innerHTML = flies[i][j];
-                }
-            }
+        var featuredElement = document.createElement("h2");
+        featuredElement.style.fontSize = "30px";
+        featuredElement.style.fontFamily = "sans-serif";
 
-            var flyTable = document.getElementById("tblflies");
-            tblFlies.innerHTML = "";
-            tblflies.appendChild(table);
-        });
 
-};
+        var featuredName = document.createTextNode(itemCount.name);
+        //console.log(featuredName);
+
+        featuredElement.appendChild(featuredName);
+        featuredItems.appendChild(featuredElement);
+
+        var para = document.createElement("p");
+        para.style.fontSize = "25px";
+        para.style.color = "black";
+        para.style.fontFamily = "sans-serif";
+        para.textAlign = "center";
+
+
+
+        var node = document.createTextNode(itemCount.description);
+        //console.log(node);
+
+        para.appendChild(node);
+        featuredItems.appendChild(para);
+    }
+
+
+
+}());

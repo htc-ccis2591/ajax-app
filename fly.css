@@ -1,28 +1,45 @@
+/* type selectors */
+
+article,
+aside,
+figure,
+figcaption,
+footer,
+header,
+nav,
 section {
     display: block;
-    padding: 15px 25px;
 }
 
 body {
     margin: auto;
-    color: #666666;
-    background: #CCCCCC;
-    font-family: Papyrus, sans-serif;
+    /*max-width: 600px;*/
+    color: #a83c15;
+    background: #FFFFFF;
+    font-family: Papyrus,sans-serif;
 }
 
-.menu-item {
-   
-    font-family: sans-serif;
-    font-size: 120%;
-    cursor: pointer;
-    color: forestgreen;
+/*aside {
+    margin: 50px 20px 10px 0;
+    width: 175px;
+    float: right;
+}*/
+
+section {
+    padding: 300px 25px;
 }
 
-ul{
-    list-style-type: none;
-    text-align: center;
-    text-shadow: 1px 1px 1px #000000;
+img {
+    display: block;
+}
 
+.hide {
+    display: none;
+}
+
+section {
+    display: block;
+    padding: 15px 25px;
 }
 
 
@@ -47,7 +64,16 @@ h1 {
     
 }
 
-footer {
-    position: absolute;
+#footer {
+
+    clear: none;
+
+    background-color: #FFFFFF;
+    color: #666666;
+    padding: 20px;
+    font-size: 100%;
+    font-style: italic;
     font-family: sans-serif;
+    float: none;
+
 }
