@@ -1,0 +1,48 @@
+/* type selectors */
+article, aside, figure, figcaption, footer, header, nav, section, img {
+    display: block;
+}
+
+body {
+
+    margin: auto;
+    /*max-width: 600px;*/
+    color: #a83c15;
+    background: #FFFFFF;
+    font-family: Papyrus,sans-serif;
+}
+
+section {
+    padding: 300px 25px;
+}}
+
+.hide {
+    display: none;
+}
+
+section {
+    display: block;
+    padding: 15px 25px;
+}
+
+
+
+header {
+    font-size: 50px;
+    background-color: #000033;
+    color: #FFFFFF;
+    background-image: url(images/banner4.jpg);
+    background-position: 100%;
+    background-repeat: no-repeat;
+    text-shadow: 2px 2px 2px #CC3300;
+
+}
+
+h1 {
+    
+    font-size: 60px;
+    font-color: black;
+    text-align: center;
+    text-shadow: 2px 2px 2px #000000;
+    
+}
