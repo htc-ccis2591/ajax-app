@@ -1,17 +1,10 @@
 /* type selectors */
-
-article,
-aside,
-figure,
-figcaption,
-footer,
-header,
-nav,
-section {
+article, aside, figure, figcaption, footer, header, nav, section, img {
     display: block;
 }
 
 body {
+
     margin: auto;
     /*max-width: 600px;*/
     color: #a83c15;
@@ -19,19 +12,9 @@ body {
     font-family: Papyrus,sans-serif;
 }
 
-/*aside {
-    margin: 50px 20px 10px 0;
-    width: 175px;
-    float: right;
-}*/
-
 section {
     padding: 300px 25px;
-}
-
-img {
-    display: block;
-}
+}}
 
 .hide {
     display: none;
@@ -49,7 +32,7 @@ header {
     background-color: #000033;
     color: #FFFFFF;
     background-image: url(images/banner4.jpg);
-    background-position: right;
+    background-position: 100%;
     background-repeat: no-repeat;
     text-shadow: 2px 2px 2px #CC3300;
 
@@ -62,18 +45,4 @@ h1 {
     text-align: center;
     text-shadow: 2px 2px 2px #000000;
     
-}
-
-#footer {
-
-    clear: none;
-
-    background-color: #FFFFFF;
-    color: #666666;
-    padding: 20px;
-    font-size: 100%;
-    font-style: italic;
-    font-family: sans-serif;
-    float: none;
-
 }
