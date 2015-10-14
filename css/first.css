@@ -21,3 +21,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', end
     
 /*    background-image: url("../images/rink3.jpg");*/
 }
+
+#controls {
+    width: 455px;
+    margin: 0 auto 30px;
+}
+
+button {
+    margin: 5px;
+    width: 100px;
+}

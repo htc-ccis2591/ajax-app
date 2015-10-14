@@ -4,13 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/first.css">
-    <title>MJ's Central Division JS</title>
+    <link rel="stylesheet" type="text/css" href="css/first.css">        
+
+    <title>MJ's First-App // Phase 2</title>
 </head>
 
+    <header> 
+        <h1>"MJ's NHL Central Division"</h1>
+    </header>
 <body>
     <div id="insert"></div>
+    
+    
+    <form id="form" action="">
+  <div id="loading2" style="display:none;"><img src="/images/loading.gif" alt="" />Loading!</div>
+  <input id="submit" value="Click!" type="submit" />
+</form>
     <h1></h1>
+    
+<!--    <div id="firstApp"> </div>-->
+<!--    <div id="centralCount" </div>-->
+    
+    <div id="controls" >
+                <button id="ajax" class="btn btn-default">Ajax Load</button>
+                <button id="load" class="btn btn-default">Local Load</button>
+                <button id="save" class="btn btn-default">Local Save</button>
+                <button id="clear" class="btn btn-default">Local Clear</button>
+        </div>
+        
+        <div id="Teams" aria-atomic ="true" aria-live="off" aria-relevant="additions removals">
+
+        </div>
  
     <script src="script.js"></script>
 

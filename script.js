@@ -1,108 +1,26 @@
 (function () {
 
-    var central = {
+    var Teams = null;
+    var data = null;
+    var central = null;
 
-        "teams": [
-            {
-                "team": "Chicago Blackhawks",
-                "location": "Chicago, IL",
-                "image": "images/hawks.png",
-                "arena": "United Center",
-                "manager": "Stan Bowman",
-                "coach": "Joel Quenneville",
-                "description": "Lead by Captain Johnathon Towes & Partick Kane the Blackhawks are the reigning 2014-15 Stanley Cup Champions",
-                "link": ""
-            },
-
-            {
-                "team": "Colorado Avalanche",
-                "location": "Denver, CO",
-                "image": "images/lanche.png",
-                "arena": "Pepsi Center",
-                "manager": "Joe Sakic",
-                "coach": "Patrick Roy",
-                "description": "Lead by Gabriel Landeskog, the Av's look to return to form with another Playoffs push in 2015-16.",
-                "link": "",
-
-             },
-
-            {
-                "team": "Dallas Stars",
-                "location": "Dallas, TX",
-                "image": "images/stars.png",
-                "arena": "American Airlines Center",
-                "manager": "Jim Nill",
-                "coach": "Lindy Ruff",
-                "description": "Lead by returning 2014-15 Art Ross Scoring Leader Jamie Benn, the Stars hope for another solid season.",
-                "link": "",
+    var localStorageKey = "TeamsData";
+    var ajax = document.getElementById("ajax");
+    var load = document.getElementById("load");
+    var save = document.getElementById("save");
+    var clear = document.getElementById("clear");
+    var targetArea = document.getElementById("Teams");
 
 
-             },
-
-            {
-                "team": "Minnesota Wild",
-                "location": "Saint Paul, MN",
-                "image": "images/wild.png",
-                "arena": "Xcel Energy Center",
-                "manager": "Craig Leopold",
-                "coach": "Mike Yeo",
-                "description": "Lead by captain Mikko Koivu along with Zach Parise and Ryan Suter, the wild hope to make a return playoff push.",
-                "link": "",
+    //    var json = loadLocalData("firstApps.json");
 
 
+    function buildfirstArticle(Teams) {
+        article = document.createElement("article");
+        return article;
+    }
 
-             },
-
-            {
-                "team": "Nashville Predators",
-                "location": "Nashville, TN",
-                "image": "images/preds.png",
-                "arena": "Bridgestone Arena",
-                "manager": "David Poile",
-                "coach": "Peter Laviolette",
-                "description": "Lead by veteran captain Shea Weber the Preds hope to make a return to the playoffs in 2015-16",
-                "link": "",
-
-
-
-             },
-
-            {
-                "team": "St. Louis Blues",
-                "location": "St. Louis, MO",
-                "image": "images/blues.png",
-                "arena": "Scottrade Center",
-                "manager": "Doug Armstrong",
-                "coach": "Ken Hitchcock",
-                "description": "Lead by veteran captain David Backes the Blues hope to make a return to the playoffs in 2015-16",
-                "link": "",
-
-
-             },
-
-            {
-                "team": "Winnipeg Jets",
-                "location": "Winnipeg, MB",
-                "image": "images/jets.png",
-                "arena": "MTS Centre",
-                "manager": "Kevin Cheveldayoff",
-                "coach": "Paul Maurice",
-                "description": "Lead by captain Andrew Ladd the Jets are hoping to make a return to the playoffs in 2015-16",
-                "link": "",
-
-
-
-             },
-                ]
-
-    };
-
-    //var a = document.getElementById('insert'); 
-    //a.href = ""
-
-
-
-    var container = central.teams;
+    var container = central.Teams;
     var centralCount = container.length;
     var target = document.getElementById("insert"),
 
@@ -115,26 +33,127 @@
 
         {
 
-            var team = container[i],
-                location = team.location,
-                image = team.image,
-                arena = 'Arena: ' + team.arena,
-                manager = 'Manager: ' + team.manager,
-                coach = 'Coach: ' + team.coach,
-                description = team.description,
-                link = team.link
+            var Teams = container[i],
+                location = Teams.location,
+                image = Teams.image,
+                arena = 'Arena: ' + Teams.arena,
+                manager = 'Manager: ' + Teams.manager,
+                coach = 'Coach: ' + Teams.coach,
+                description = Teams.description,
+                link = Teams.link
 
 
-            target.innerHTML += '<h1> ' + team.team + '</h1>' +
+            target.innerHTML += '<h1> ' + Teams.Teams + '</h1>' +
 
                 '<img src=" ' + image + '"></img> <h2>' + location + ' </h2> <h2>' + arena + ' </h2> <h2>' + manager + ' </h2> <h2>' + coach + ' </h2> <h3>' + description + ' </h3> <h4>' + link + ' </h4>';
-            
-            
+
+
 
         }
-  
+
+    }
+    
+    (function (d) {
+  d.getElementById('form').onsubmit = function () {
+    d.getElementById('submit').style.display = 'block';
+    d.getElementById('loading2').style.display = 'block';
+  };
+}(document));
+
+    // Cross-Browser HTTP Object
+
+    function getHTTPObject() {
+        var xhr;
+
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            xhr = new ActiveXObject("Msxm12.XMLHTTP");
+        }
+
+        return xhr;
     }
 
+    // AJAX Request for data.
+    function loadDataAjax() {
+        var request = getHTTPObject();
+
+        request.open("GET", "data/Teams.json", true);
+        request.send(null);
+        request.onreadystatechange = function () {
+            var text;
+
+            if (request.readyState === 4 && request.status === 200) {
+
+                text = request.responseText;
+                data = JSON.parse(text);
+
+                showfirstAppData();
+            }
+        }
+    }
+
+    function showfirstAppData() {
+
+        var Teams = data.Teams;
+        var i, first;
+
+        for (i = 0; i < fistApps.length; i++) {
+            if (i === 0) {
+                targetArea.innerHTML = "";
+            }
+
+            Teams = Teams[i];
+            targetArea.appendChild(buildfirstArticle(first));
+
+        }
+    }
+
+    function loadLocalData() {
+        if (typeof (localStorage) === 'undefined') {
+            targetArea.innerHTML = "Sorry, local storage is not supported for this browser.";
+        } else {
+            // Do the stuff to load the page data
+            targetArea.innerHTML = "Loading Data...";
+            text = localStorage.getItem(localStorageKey);
+        }
+        if (text === null) {
+            targetArea.innerHTML = "Sorry, no local data found.";
+        } else {
+            data = JSON.parse(text);
+            showfirstAppsData(data);
+        }
+    }
+
+
+    function saveDataLocally() {
+        if (typeof (localStorage) === 'undefined') {
+            targetArea.innerHTML = "Sorry, local storage is not supported for this browser.";
+        } else {
+            if (data === null) {
+                targetArea.innerHTML = "Sorry, you must load data before you can save.";
+            } else {
+                localStorage.setItem(localStorageKey, JSON.stringify(data));
+            }
+        }
+    }
+
+    function clearDataLocally() {
+        if (typeof (localStorage) === 'undefined') {
+            targetArea.innerHTML = "Sorry, local storage is not supported for this browser.";
+        } else {
+            localStorage.removeItem(localStorageKey);
+        }
+        xmlHttp.open("HEAD", url, true);
+        xmlHttp.send(null);
+    }
+
+    targetArea.innerHTML = "Click a button to Load Data";
+
+    ajax.addEventListener("click", loadDataAjax, false);
+    load.addEventListener("click", loadLocalData, false);
+    save.addEventListener("click", saveDataLocally, false);
+    clear.addEventListener("click", clearDataLocally, false);
 
     //    alert("CENTRAL DIVISION JS BY: mj")
 
