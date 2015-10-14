@@ -1,0 +1,108 @@
+#wrapper {
+    background-image: linear-gradient(to bottom, #FFFFFF, #8FA5CE);
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 20px 10px;
+}
+
+#container {
+    margin-left: 0px;
+    margin-right: auto;
+    width: 100%;
+    min-width: 700px;
+}
+
+header {
+    background-color: #869DC7;
+    color: cornsilk;
+    font-size: 110%;
+    font-family: "Georgia", "Times New Roman", serif;
+    text-align: center;
+    padding: 10px 10px 10px 155px;
+    height: 80px;
+}
+
+#leftcolumn {
+    background-color: #869DC7;
+    height: 500px;
+    float: left;
+    width: 150px;
+}
+
+#leftcolumn button {
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+#leftcolumn button:hover {
+    color: #330033;
+    background-color: #996633;
+    -webkit-transition: background-color 2s linear;
+    -moz-transition: background-color 2s linear;
+    -o-transition: background-color 2s linear;
+    transition: background-color 2s linear;
+}
+
+#fullList {
+    font-family: "verdana", "ariel", sans-serif;
+    color: #663333;
+    width: 450px;
+    padding-top: 10px;
+    padding-left: 40px;
+    margin-left: 150px;
+}
+
+#fullList h3 {
+    font-size: 120%;
+    position: relative;
+    top: 50px;
+}
+
+#fullList h4 {
+    font-size: 90%;
+    position: relative;
+    bottom: 65px
+}
+
+#fullList h5 {
+    font-style: italic;
+    font-size: 70%;
+    position: relative;
+    top: 40px;
+}
+
+#fullList h6 {
+    position: relative;
+    bottom: 80px;
+}
+
+#fullList img {
+    padding: 2px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: crimson;
+    position: relative;
+    left: 300px;
+}
+
+#fullList p {
+    border-width: 3px;
+    border-style: solid;
+    border-left: none;
+    border-right: none;
+    border-color: black;
+    padding: 4px;
+    position: relative;
+    bottom: 80px;
+    font-family: "lucida script", cursive;
+    color: #336600;
+}
+
+footer {
+    text-align: center;
+}
+
+.hide {
+    display: none;   
+}
