@@ -21,3 +21,5 @@ h3 {
     color: green;
     text-align: center;
 }
+button { margin-top: inherit;
+}

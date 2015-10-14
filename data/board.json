@@ -1,0 +1,30 @@
+{
+"games": [
+            {
+                "name": "Settlers of catan",
+                "rating": "Super fun",
+                "pic": "images/settlers.jpg",
+        },
+            {
+                "name": "Agricola",
+                "rating": "Great for resource managent gamers",
+                "pic": "images/agricola.jpg",
+        },
+            {
+                "name": "Carcassonne",
+                "rating": "Fun to play with just two people",
+                "pic": "images/carcassonne.jpg",
+       },
+            {
+                "name": "Killer bunnys",
+                "rating": "Hard to learn but cool to play",
+                "pic": "images/killerbunnies.png"
+        },
+            {
+                "name": "Munchkin",
+                "rating": "The game to play if you want to laugh",
+                "pic": "images/munchkin.jpg",
+        }
+        ]
+    
+}
