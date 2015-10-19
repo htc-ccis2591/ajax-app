@@ -1,34 +1,9 @@
 (function () {
 
 //Function to Return the Correct Ajax Object
-function getHTTPObject() {
-    var xhr;
-    if (window.XMLHttpRequest) {
-        xhr = new XMLHttpRequest();
-    } 
-    else if (window.ActiveXObject) { 
-        xhr = new ActiveXObject("Msxml2.XMLHTTP");
-    }
-    return xhr;
-}
+
 //Ajax Load
-function ajaxCall(dataUrl, outputElement, callback) {
-    var request = getHTTPObject();
-    outputElement.innerHTML = "Loading.. Please take a moment";
-    request.onreadystatechange = function() {
-        if ( request.readyState === 4 && request.status === 200 ) {
-            var sites = JSON.parse(request.responseText);
-            if(typeof callback === "function"){
-                callback(sites);
-            }
-            else {
-                 alert("HTTP error " + request.status + " " + request.statusText);
-            }
-        } 
-    }    
-    request.open("GET", dataUrl, true);
-    request.send(null);
-}
+
 
 (function(){
     var ajaxLoadButton = document.getElementById("ajaxload-btn"),
@@ -38,9 +13,42 @@ function ajaxCall(dataUrl, outputElement, callback) {
         searchField = document.getElementById("search"),
         target = document.getElementById("network");
     var site = {
+        socialNetwork : null,
+        getHttp: function(){
+            var xhr;
+            if (window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } 
+            else if (window.ActiveXObject) { 
+                xhr = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            return xhr;
+ },
+        
+        ajax: function (dataUrl, outputElement, callback){
+     
+                var request = site.getHttp();
+                outputElement.innerHTML = "Loading.. Please take a moment";
+                request.onreadystatechange = function() {
+                    if ( request.readyState === 4 && request.status === 200 ) {
+                        site.socialNetwork = JSON.parse(request.responseText);
+                        if(typeof callback === "function"){
+                            callback(site.socialNetwork);
+                        }
+                        else {
+                             alert("HTTP error " + request.status + " " + request.statusText);
+                        }
+                    } 
+                }    
+                request.open("GET", dataUrl, true);
+                request.send(null);
+    },
+        
+        
+        
         search : function(event){
             var output = document.getElementById("network");    
-             ajaxCall('data/netSites.json', output, function (data) {
+             site.ajax('data/netSites.json', output, function (data) {
                 var searchValue = searchField.value,
                     siteList = data.socialNetworks,
                     count = siteList.length,
@@ -72,7 +80,7 @@ function ajaxCall(dataUrl, outputElement, callback) {
         },
         socialNetwork : function () {
             var output = document.getElementById("network");
-            ajaxCall('data/netSites.json', output, function (data) {
+            site.ajax('data/netSites.json', output, function (data) {
                 var siteList = data.socialNetworks,
                     count = siteList.length,
                     i;
