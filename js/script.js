@@ -1,58 +1,7 @@
 
 (function () {
     var kevinSmithMovies = {
-        items : [
-            {
-                title: "Clerks",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "1994",
-                cast: "Brian O'Halloran, Jeff Anderson, Marilyn Ghigliotti, Lisa Spoonauer, Jason Mewes, Kevin Smith, Walt Flanagan", 
-           },
-            {
-                title: "Mallrats",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "1995",
-                cast:  "Shannen Doherty, Jeremy London, Jason Lee, Claire Forlani, Ben Affleck, Joey Lauren Adams, Jason Mewes, Kevin Smith",
-           },
-            {
-                title: "Chasing Amy",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "1997",
-                cast: "Joey Lauren Adams, Ben Affleck, Jason Lee, Dwight Ewell, Jason Mewes, Kevin Smith",
-           },
-            {
-                title: "Dogma",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "1999",
-                cast:  "Linda Fiorentino, Ben Affleck, Matt Damon, Alan Rickman, Jason Lee, Chris Rock, Salma Hayek, Jason Mewes, Kevin Smith",
-           },
-            {
-                title: "Jay and Silent Bob Strike Back",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "2001",
-                cast:  "Jason Mewes, Kevin Smith, Ben Affleck, Shannon Elizabeth, Eliza Dushku, Will Ferrell, Jason Lee, Jennifer Schwalbach",
-           },
-            {
-                title: "Jersey Girl",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "2004",
-                cast:  "Ben Affleck, Jennifer Lopez, Liv Tyler, George Carlin, Steven Root, Jennifer Schwalbach",
-           },
-            {
-                title: "Clerks II",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "2006",
-                cast:  "Brian O'Hallaron, Jeff Anderson, Jason Mewes, Kevin Smith, Rosario Dawson, Trevor Fehrman, Ben Affleck, Jason Lee",
-           }
-           ]
-    };
+       var data = null;
 
     var object = kevinSmithMovies.items;
     var showMovies = document.getElementById("movies")[0];
@@ -78,7 +27,56 @@
             target.appendChild(ul);
         }
     }
-
+function loadLocalData() { 
+        if (typeof(localStorage) === 'undefined') { 
+    targetArea.innerHTML = "Browser does not support local storage."; 
+         } 
+       else { 
+          // Do the stuff to load the page data 
+             targetArea.innerHTML = "Loading Data..."; 
+           text = localStorage.getItem(localStorageKey); 
+            if (text === null) { 
+                targetArea.innerHTML = "No local data found."; 
+           }  
+           else { 
+               data = JSON.parse(text); 
+               showTedTalkData(data); 
+           } 
+        } 
+    } 
+        
+    
+   function saveDataLocally(){ 
+         if (typeof(localStorage) === 'undefined') { 
+            targetArea.innerHTML = "Browser does not support local storage."; 
+       } 
+        else { 
+           if (data === null) { 
+               targetArea.innerHTML = "Data must be loaded before it can be saved."; 
+            }  
+             else { 
+                localStorage.setItem(localStorageKey, JSON.stringify(data)); 
+            } 
+         } 
+    } 
+                                  
+   function clearDataLocally(){ 
+       if (typeof(localStorage) === 'undefined') { 
+            targetArea.innerHTML = "Browser does not support local storage."; 
+        } 
+        else { 
+           localStorage.removeItem(localStorageKey); 
+       } 
+   } 
+    
+    // Do the stuff to load the page data 
+    targetArea.innerHTML = "Click a button to Load Data"; 
+ 
+ 
+    ajax.addEventListener("click", loadDataAjax, false); 
+    load.addEventListener("click", loadLocalData, false); 
+     save.addEventListener("click", saveDataLocally, false); 
+    clear.addEventListener("click", clearDataLocally, false);  
 
 
 
