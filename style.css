@@ -1,13 +1,47 @@
-.hide{
-display : none;
-}
 
 img {
-	position: absolute;
-    top: 80px;
-    left: 500px;
-    width: 400px;
-    height: 300px;
+	max-width: 600px;
+    max-height: 400px;
     border: 3px solid #8AC007;
+    resize: both;
+    display:block;
+}
+
+
+header {
+    color: darkgreen;
+    font-family: Cooper Black, Arial Black;
+    font-size: 5em;
+    text-align: center;
+    padding: 30px;
 }
     
+body {
+	
+    background-color: lightcyan;
+}
+
+buttons {
+    margin: 5px;
+    width: 100px;
+}
+
+
+#animalLists {
+    padding: 30px 5px;
+    font-size: 1.5em;
+    text-align: left;
+    color: darkgreen
+}
+*/
+h2 {
+     color:darkgreen;
+}
+    
+
+p {
+    display:block;
+    padding: 20px 0px;
+    font-size: 0.8em;
+    color:darkgreen;
+}
