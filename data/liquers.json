@@ -1,0 +1,52 @@
+﻿{
+  "Liquers": [
+        {
+            "itemnumber": "001",
+            "description": "Vodka",
+            "cost": "25.00",
+            "proof": "80",
+            "popularity": "7",
+			"image": "images/vodka.jpg"
+        },
+          {
+              "itemnumber": "002",
+              "description": "Whiskey",
+              "cost": "20.00",
+              "proof": "80",
+              "popularity": "6",
+			  "image": "images/whisky.jpg"
+          },
+            {
+                "itemnumber": "003",
+                "description": "Tequila",
+                "cost": "23.00",
+                "proof": "90",
+                "popularity": "10",
+				"image": "images/tequila.jpg"
+            },
+              {
+                  "itemnumber": "004",
+                  "description": "Rum",
+                  "cost": "18.00",
+                  "proof": "80",
+                  "popularity": "7",
+				  "image": "images/Rum.jpg"
+              },
+                {
+                    "itemnumber": "005",
+                    "description": "Bourbon",
+                    "cost": "30.00",
+                    "proof": "70",
+                    "popularity": "5",
+					"image": "images/bourbon.jpg"
+                },
+                  {
+                      "itemnumber": "006",
+                      "description": "Beer",
+                      "cost": "13.00",
+                      "proof": "12",
+                      "popularity": "10",
+					  "image":  "images/beer.jpg"
+                  }
+    ]
+}

@@ -1,0 +1,37 @@
+﻿.iteminfo{
+     
+}
+#imgholder{
+    height: 300px;
+    width: 275px;
+    background-size: 275px, 300px;
+    margin-top: 30px;
+}
+#producttable{
+    height: 99px;
+}
+#inventorydropdown{
+    margin-bottom: 5px;
+    float: left;
+}
+.topicbar{
+    text-align: center;
+    background-color: #B8860B;
+    margin: 5px;
+    padding: 5px;
+}
+#favbutton{
+    float: left;
+    height: 35px;
+    width: 35px;
+    background-image: url(../images/unclickedfav.jpg);
+   background-size: 30px;
+    background-repeat: no-repeat;
+    margin-right: 7px;
+}
+.pagebuttons{
+    float: left;
+}
+h3{
+    margin-top: 30px;
+}
