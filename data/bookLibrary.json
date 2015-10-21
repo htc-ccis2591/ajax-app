@@ -1,0 +1,52 @@
+{
+    "books" : [
+        {
+            "name": "Eragon",
+            "author": "Christopher Paolini",
+            "series": "The Inheritance Cycle",
+            "genre": "Dragon Fantasy",
+            "image": "images/eragon_ChristopherPaolini.jpg",
+            "description": "Fifteen-year-old Eragon believes that he is merely a poor farm boy—until his destiny as a Dragon Rider is revealed. Gifted with only an ancient sword, a loyal dragon, and sage advice from an old storyteller, Eragon is soon swept into a dangerous tapestry of magic, glory, and power. Now his choices could save—or destroy—the Empire."
+        },
+        {
+            "name": "The Eye of the World",
+            "author": "Robert Jordan",
+            "series": "The Wheel of Time",
+            "genre": "Adventure",
+            "image": "images/eyeOfTheWorld_RobertJordan.jpg",
+            "description": "The Eye of the World is book one of The Wheel of Time®, Robert Jordan’s internationally bestselling fantasy series. The peaceful villagers of Emond's Field pay little heed to rumors of war in the western lands until a savage attack by troll-like minions of the Dark One forces three young men to confront a destiny which has its origins in the time known as The Breaking of the World."
+        },
+        {
+            "name": "Arthur",
+            "author": "Stephen R. Lawhead",
+            "series": "Pendragon Cycle",
+            "genre": "Arthurian Legend",
+            "image": "images/arthur_StephenLawhead.jpg",
+            "description": "In a forgotten age of darkness a magnificent king arose to light the world. They called him unfit to rule—a lowborn, callow boy, Uthers bastard. But his coming had been foretold in the songs of the bard Taliesin. He had learned the uses of power from his guide and protector, Merlin. He was Arthur, Pendragon of the Island of the Mighty—who would rise to legendary greatness in a Britain torn by violence, greed and war; the Lord of Summer who would usher in a glorious reign of peace and prosperity . . . and whose noble, trusting heart would be broken by treachery."
+        },
+        {
+            "name": "A Study In Scarlet",
+            "author": "Arthur Conan Doyle",
+            "series": "Sherlock Homes",
+            "genre": "Mystery",
+            "image": "images/studyInScarlet_ArthurConanDoyle.jpg",
+            "description": "A STUDY IN SCARLET is the first in Arthur Conan Doyle's -Sherlock Holmes- series of mystery novels. Holmes resolves to solve the mystery of a corpse found at a derelict house with the word -RACHE- scrawled in blood on the wall beside the body. "
+        },
+        {
+            "name": "The Iron Lance",
+            "author": "Stephen R. Lawhead",
+            "series": "The Celtic Crusades",
+            "genre": "Historical Fiction",
+            "image": "images/ironLance_StephenLawhead.jpg",
+            "description": "In book one of the Celtic Crusades series, a Scottish boy travels to Jerusalem to try to regain his family's stolen lands, and ends up saving the relic Iron Lance that pierced Christ's side."
+        },
+        {
+            "name": "The Ultimate Hitchhikers Guide to the Galaxy",
+            "author": "Douglas Adams",
+            "series": "Hitchhikers Guide",
+            "genre": "Comic Fantasy",
+            "image": "images/ultHitchhikersGuide_DouglasAdams.jpg",
+            "description": "Seconds before the Earth is demolished for a galactic freeway, Arthur Dent is saved by Ford Prefect, a researcher for the revised Guide. Together they stick out their thumbs to the stars and begin a wild journey through time and space."
+        }
+    ]
+}
