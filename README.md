@@ -9,3 +9,6 @@ You will need to structure your object in JSON and provide some starting data - 
 Then you will need to make a basic HTML5 page and layout that data on the page using JavaScript.  This is similar to what you did in the JS-Data asignment to add the two weekly special items.  You should be prepared to share what you have put together as a presentation to the class next week.
 
 In the following weeks we will build on this, so make sure that you have an object structure and HTML layout that is well suited for the information that you are managing. If you have questions, please ask before coming to class next week.
+
+
+Google API key: AIzaSyAR6COYwFk2CdSC32MRoMXwiRzYKbF_WCU

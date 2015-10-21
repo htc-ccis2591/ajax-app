@@ -5,44 +5,37 @@ article, aside, figure, figcaption, footer, header, nav, section, img {
 
 body {
 
-    margin: auto;
-    /*max-width: 600px;*/
-    color: #a83c15;
-    background: #FFFFFF;
-    font-family: Papyrus,sans-serif;
+   background-color: #757547;
 }
 
-section {
-    padding: 300px 25px;
-}}
-
-.hide {
-    display: none;
+article {
+    padding-bottom: 40px;
+    font-family: Papyrus, sans-serif;
 }
-
-section {
-    display: block;
-    padding: 15px 25px;
-}
-
-
 
 header {
-    font-size: 50px;
-    background-color: #000033;
-    color: #FFFFFF;
-    background-image: url(images/banner4.jpg);
-    background-position: 100%;
-    background-repeat: no-repeat;
-    text-shadow: 2px 2px 2px #CC3300;
-
-}
-
-h1 {
-    
-    font-size: 60px;
-    font-color: black;
+    color: sienna;
+    font-family: Papyrus, sans-serif;
+    font-size: 4em;
+    text-shadow: 2px 2px black;
     text-align: center;
-    text-shadow: 2px 2px 2px #000000;
-    
+    padding: 25px;
 }
+
+p {
+    font-size: 1.5em;
+    color: white;
+}
+
+#controls {
+    width: 500px;
+    margin: 0 auto 40px;
+        
+}
+
+button {
+    margin: 10px;
+    width: 100px;
+    box-shadow: 2px 2px black;
+}
+

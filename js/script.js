@@ -1,54 +1,163 @@
 (function () {
-    var Items = {
 
-    var aside = document.getElementsByTagName("aside")[0];
-    aside.style.listStylePosition = "center";
-    document.querySelector(".hide").style.display = "block";
+	var data = null,
+		localStorageKey = "destinationsData",
+		targetArea = document.getElementById("locations"),
+		ajax = document.getElementById("ajax"),
+		load = document.getElementById("load"),
+		save = document.getElementById("save"),
+		clear = document.getElementById("clear");
 
-    var inventory = Items.featuredFlies;
-    for (i = 0; i < inventory.length; i++) {
+	function firstApp(location) {
 
-        itemCount = inventory[i];
+		var article, row, col1, col2, wrapper, h2, headingText, iframe, image, paragraph, paraText;
 
-        var featuredItems = document.getElementById("featured-items");
+		article = document.createElement("article");
 
-        var featuredName = document.createTextNode(itemCount.name);
-        //console.log(featuredName);
+		row = document.createElement("div");
+		row.setAttribute("class", "row");
 
-        var pictureElement = document.createElement("img");
+		col1 = document.createElement("div");
+		col1.setAttribute("class", "col-md-push-6");
 
-        pictureElement.setAttribute("src", itemCount.image);
-        //console.log(pictureElement);
-        featuredItems.appendChild(pictureElement);
-        featuredItems.style.alignImage = "center";
+		col2 = document.createElement("div");
+		col2.setAttribute("class", "col-md-pull-6");
+
+		/*wrapper = document.createElement("div");
+		wrapper.setAttribute("class", "imageWrapper");
+		
+		iframe = document.createElement("div");
+		iframe.setAttribute("frameborder", "0");
+		iframe.setAttribute("src", "../images/")*/
+
+		h2 = document.createElement("div");
+		headingText = document.createTextNode(location.name);
+		h2.appendChild(headingText);
+
+		paragraph = document.createElement("p");
+		paraText = document.createTextNode(location.description);
+		paragraph.appendChild(paraText);
+
+		image = document.createElement("img");
+		image = document.getElementById("locations").innerHTML="<img src='../images/' />";
+				
+		article.appendChild(row);
+
+        row.appendChild(col1);
+        row.appendChild(col2);
+
+        col1.appendChild(h2);
+        col1.appendChild(paragraph);
+
+        col2.appendChild(wrapper);
+        wrapper.appendChild(iframe);
+        iframe.appendChild(image);
+		
+		return article;
+	}
+
+	function showData(data) {
+
+		var destinations = data.destinations;
+		var i, loc;
+
+		for (i = 0; i < destinations; i++) {
+			if (i === 0) {
+				targetArea.innerHTML = "";
+			}
+
+			loc = destinations[i];
+			targetArea.appendChild(firstApp(loc));
+		}
+
+	}
+
+	function loadLocalData() {
+		if (typeof (localStorage) === 'undefined') {
+			targetArea.innerHTML = "Sorry, local storage is not supported for this browser.";
+		} else {
+			targetArea.innerHTML = "Loading Data...";
+			text = localStorage.getItem(localStorageKey);
+			if (text === null) {
+				targetArea.innerHTML = "Sorry, no local data found.";
+			} else {
+				data = JSON.parse(text);
+				showData(data);
+			}
+		}
+	}
 
 
-        var featuredElement = document.createElement("h2");
-        featuredElement.style.fontSize = "30px";
-        featuredElement.style.fontFamily = "sans-serif";
-        featuredElement.style.textAlign = "center";
+	function saveDataLocally() {
+		if (typeof (localStorage) === 'undefined') {
+			targetArea.innerHTML = "Sorry, this browser does not support local storage.";
+		} else {
+			if (data === null) {
+				targetArea.innerHTML = "Sorry, data must be loaded before it can be saved.";
+			} else {
+				localStorage.setItem(localStorageKey, JSON.stringify(data));
+			}
+		}
+	}
+
+	function clearDataLocally() {
+		if (typeof (localStorage) === 'undefined') {
+			targetArea.innerHTML = "Sorry, local storage is not supported for this browser.";
+		} else {
+			localStorage.removeItem(localStorageKey);
+		}
+	}
+
+	function getHTTPObject() {
+
+		var xhr;
+
+		if (window.XMLHttpRequest) {
+			xhr = new XMLHttpRequest();
+		} else if (window.ActiveXObject) {
+
+			xhr = new ActiveXObject("Msxml2.XMLHTTP");
+		}
+
+		return xhr;
+	}
+
+	function loadDataAjax(dataURL, outputElement, callback) {
+
+		var request = getHTTPObject();
 
 
+		outputElement.innerHTML = "Please wait, loading....";
 
+		request.onreadystatechange = function () {
 
-        featuredElement.appendChild(featuredName);
-        featuredItems.appendChild(featuredElement);
+			if (request.readyState === 4 && request.status === 200) {
 
-        var para = document.createElement("p");
-        para.style.fontSize = "25px";
-        para.style.color = "black";
-        para.style.fontFamily = "sans-serif";
-        para.style.textAlign = "center";
+				var locations = JSON.parse(request.responseText);
 
+				if (typeof callback === "function") {
 
+					callback(locations);
+					
+				}
+			}
+		};
+		request.open("GET", dataURL, true);
+		request.send(null);
+	}
 
-        var node = document.createTextNode(itemCount.description);
-        //console.log(node);
+	function loadFlyData() {
+		var dataURL = "data/destinations.json";
+		var outputElement = document.getElementById("locations");
+		var callback = showData;
+		
+		showData;
+	}
 
-        para.appendChild(node);
-        featuredItems.appendChild(para);
-    }
+	targetArea.innerHTML = "Click a button to Load Data";
 
-
-
+	ajax.addEventListener("click", loadFlyData, false);
+	load.addEventListener("click", loadLocalData, false);
+	save.addEventListener("click", saveDataLocally, false);
+	clear.addEventListener("click", clearDataLocally, false);
 }());
