@@ -1,0 +1,59 @@
+{
+    "movies": [
+        {
+
+            "name": "Forrest Gump",
+            "genre": "Drama",
+            "image": "images/forest_gump.jpg",
+            "video": "eYSnxZKTZzU"
+        },
+        {
+
+            "name": "Shawshank Redemption",
+            "genre": "Drama",
+            "image": "images/shawshank_redemption.jpg",
+            "video": "NmzuHjWmXOc"
+        },
+        {
+
+            "name": "Avengers",
+            "genre": "Action",
+            "image": "images/avengers.jpg",
+            "video": "eOrNdBpGMv8"
+        },
+                {
+            "name": "Superman",
+            "genre": "Action",
+            "image": "images/superman.jpg",
+            "video": "XWHyvubVdPA"
+        },
+        {
+
+            "name": "Ghostbusters",
+            "genre": "Comedy",
+            "image": "images/ghostbusters.jpg",
+            "video": "vntAEVjPBzQ"
+        },
+        {
+            "name": "Step Brothers",
+            "genre": "Comedy",
+            "image": "images/step_brothers.jpg",
+            "video": "uEG78RoNgh8"
+        },
+        {
+
+            "name": "Penguins",
+            "genre": "Animated",
+            "image": "images/penguins.jpg",
+            "video": "KHGHEpUeUwo"
+        },
+        {
+            "name": "Evil Dead 2",
+            "genre": "Horror",
+            "image": "images/evil_dead_2.jpg",
+            "video": "XPOYmHqWeJE"
+        }
+        
+
+    ]
+}
