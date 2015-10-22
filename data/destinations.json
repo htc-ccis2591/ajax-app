@@ -1,0 +1,34 @@
+{
+  "destinations": [
+    {
+      "name": "Madison River",
+      "image": "../images/madison.jpg",
+      "description": "The Madison River, perhaps the most famous of all the rivers in Montana, begins in Yellowstone National Park at the confluence of the Firehole River and Gibbon River. From its origin, it flows for more than 140 miles through exceptionally beautiful scenery before it reaches the Missouri River near the town of Three Forks, Montana."
+    },
+    {
+      "name": "Deschutes River",
+      "image": "../images/deschutes.jpg",
+      "description": "The Deschutes River is one of the premier fly fishing rivers in the Pacific Northwest. Where else is a blue ribbon, native-fish-only trout stream and a strong summer Steelhead run found in the same place?"
+    },
+    {
+      "name": "Driftless Area",
+      "image": "../images/driftlessWisconsin.jpg",
+      "description": "The Driftless area of Wisconsin has a dizzying amount of fly fishable water with some of the best spring creek fishing in the world."
+    },
+    {
+      "name": "Metolius",
+      "image": "../images/metolius.jpg",
+      "description": "The Metolius River is easily one of the most beautiful rivers in the world; few would dispute that"
+    },
+    {
+      "name": "Gallatin Canyon Montana",
+      "image": "../images/GallatinCanyonMontana.jpg",
+      "description": "The Gallatin River is the picture of a classic Montana trout stream. Lined with tall Douglas firs, framed by soaring snow-capped peaks, and packed with riffles, pools, and boulders, it’s a river that begs to be fished."
+    },
+    {
+      "name": "Jackson Hole",
+      "image": "../images/jacksonHole.jpg",
+      "description": "Few locations worldwide compare to Jackson Hole’s combination of breathtaking scenery, legendary fishing, and accessibility for all skill levels."
+    }
+  ]
+}
