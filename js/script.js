@@ -1,7 +1,109 @@
 
 (function(){
     
-       
+ //Page 140 in the book section Listing 7.4.7
+        
+var searchForm = document.getElementById("search-form");
+var searchField = document.getElementById("q");
+var getAllButton = document.getElementById("get-all");
+//var count = Cambodia.touristSite.length;
+//var target = document.getElementById("output");
+        
+var touristList = {
+    search : function(event){
+        var searchValue = searchField.value,
+            i;
+        event.preventDefault();
+        target.innerHTML = "";
+        
+    if(count > 0 && searchValue !== ""){
+        for(i = 0; i < count; i ++){
+        var obj = list.games[i],
+     isItFound = obj.title.indexOf(searchValue);
+  
+    if (isItFound !== -1){
+        target = document.getElementById("wonders");
+        var getName = document.createElement("p");
+        
+    var createImgElement = document.createElement("img");
+        createImgElement.src = (obj.image);
+    
+    var tourist = document.createTextNode(name);
+    var text = document.createTextNode(loc);                 var detail = document.createTextNode(desc);
+    var contact = document.createTextNode(email);
+    var emaillink = document.createElement("a");
+        emaillink.setAttribute("href", "mailto:"+ email);    
+    h2.appendChild(tourist);
+    target.appendChild(h2);
+    h3.appendChild(text);
+    target.appendChild(h3);
+    target.appendChild(image);
+    //image.setAttribute("class", "float");
+    para.appendChild(detail);
+    target.appendChild(para);
+    emaillink.appendChild(contact);
+    target.appendChild(emaillink);
+    }
+    }
+  }
+},
+    
+getAllCambodia : function(){
+    var i;
+    var count = Cambodia.touristSite.length;
+var target = document.getElementById("output");
+    target.innerHTML = "";
+    
+    if (count > 0){
+    for(i = 0; i < count; i ++){
+        var obj = Cambodia.touristSite[i];
+        
+        target = document.getElementById("wonders");
+        var getName = document.createElement("p");
+    
+    
+    var createImgElement = document.createElement("img");
+        createImgElement.src = (obj.image);
+    
+    var tourist = document.createTextNode(name);
+    var text = document.createTextNode(loc);                 var detail = document.createTextNode(desc);
+    var contact = document.createTextNode(email);
+    var emaillink = document.createElement("a");
+        emaillink.setAttribute("href", "mailto:"+ email);    
+    h2.appendChild(tourist);
+    target.appendChild(h2);
+    h3.appendChild(text);
+    target.appendChild(h3);
+    target.appendChild(image);
+    //image.setAttribute("class", "float");
+    para.appendChild(detail);
+    target.appendChild(para);
+    emaillink.appendChild(contact);
+    target.appendChild(emaillink);
+        
+    }
+  }
+},
+
+setActiveSection : function(){
+        
+    this.parentNode.setAttribute("class", "active");
+},
+    removeActiveSection : function(){
+            
+    this.parentNode.removeAttribute("class");
+}    
+}
+getAllButton.addEventListener("click", touristList.getAllCambodia, false);
+    
+searchForm.addEventListener("submit", touristList.search, false);
+    
+searchField.addEventListener("keyup", touristList.search, false);
+ 
+    //console.log(target);
+    //console.log(Cambodia); 
+    //console.log(searchForm);
+      
  //Page 172-176 in the book section Listing 8.12   
 
 var getName = document.createElement("p");
