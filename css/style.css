@@ -1,0 +1,50 @@
+/* type selectors */
+article, aside, figure, figcaption, footer, header, nav, section {
+    display: block;
+}
+
+body {color: #666666; 
+	font-family: Papyrus, fantasy;
+    max-width: 600px;}
+
+header { background-color: #000033; color: #FFFFFF; margin-top: 0px;
+    background-image: url(../images/SR1.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: right;}
+h1 { padding: 10px; margin-bottom: 0px;}
+#style {margin-bottom: 20px;}
+
+aside {
+	margin: 120px 5px 10px 0;
+	width: 400px;
+	float: right;
+}
+
+section {
+	padding: 15px 25px;
+}
+h2 { color: #660000; }
+
+.Tourist Sites-item {
+    font-size: 120%;
+	cursor: pointer;
+}
+
+img {max-width:70%; height: auto; padding-bottom: 5px;
+    display: block;
+}
+
+.hide {
+	display: none;
+}
+
+
+ul {
+	padding-left: 45px; 
+}
+li {
+	padding-bottom: .25em;
+}
+
+#theImage { visibility: hidden; }
