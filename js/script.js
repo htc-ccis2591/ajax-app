@@ -39,20 +39,20 @@
 		paragraph.appendChild(paraText);
 
 		image = document.createElement("img");
-		image = document.getElementById("locations").innerHTML="<img src='../images/' />";
-				
+		image = document.getElementById("locations").innerHTML = "<img src='../images/' />";
+
 		article.appendChild(row);
 
-        row.appendChild(col1);
-        row.appendChild(col2);
+		row.appendChild(col1);
+		row.appendChild(col2);
 
-        col1.appendChild(h2);
-        col1.appendChild(paragraph);
+		col1.appendChild(h2);
+		col1.appendChild(paragraph);
 
-        col2.appendChild(wrapper);
-        wrapper.appendChild(iframe);
-        iframe.appendChild(image);
-		
+		col2.appendChild(wrapper);
+		wrapper.appendChild(iframe);
+		iframe.appendChild(image);
+
 		return article;
 	}
 
@@ -67,7 +67,7 @@
 			}
 
 			loc = destinations[i];
-			targetArea.appendChild(firstApp(loc));
+			targetArea.appendChild(firstApp(location));
 		}
 
 	}
@@ -138,11 +138,11 @@
 				if (typeof callback === "function") {
 
 					callback(locations);
-					
+
 				}
 			}
 		};
-		request.open("GET", dataURL, true);
+		request.open("GET", "data/destination.json", true);
 		request.send(null);
 	}
 
@@ -150,7 +150,7 @@
 		var dataURL = "data/destinations.json";
 		var outputElement = document.getElementById("locations");
 		var callback = showData;
-		
+
 		showData;
 	}
 
