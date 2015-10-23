@@ -1,10 +1,8 @@
 (function () {
 
-    var teams = null;
     var Teams = null;
-    var firstApp = null;
-        
-    var localStorageKey = "";
+    
+    var localStorageKey = ("");
     var ajax = document.getElementById("ajax");
     var load = document.getElementById("load");
     var save = document.getElementById("save");
@@ -16,8 +14,8 @@
         
         i;
 
-    if (centralCount > 0) {
-        for (i = 0; i < centralCount; i = i + 1)
+    if (Teams> 0) {
+        for (i = 0; i < Teams; i = i + 1)
         {
 
             var Teams = container[i],
@@ -47,12 +45,9 @@
         
         return xhr;
     }
-    
-//    ajaxCall("data/Teams.json", function(data) {
-//        
-//    });
 
-    function ajaxCall(dataURl, callback) {
+
+    function ajaxCall(dataURL, outputElement, callback) {
 
         var request = getHTTPObject();
         target.innerHTML = "Loading...";
@@ -74,7 +69,7 @@
             }
         }
 
-        request.open("GET", dataURl, true);
+        request.open("GET", "data/Teams.json", true);
         request.send(null);
 
     }
@@ -90,7 +85,7 @@
         if (Teams === null) {
             targetArea.innerHTML = "Sorry, no local data found.";
         } else {
-            Teams = JSON.parse(centralCount);
+            Teams = JSON.parse(showTeamsData);
             showTeamsData(Teams);
         }
     }
@@ -102,19 +97,9 @@
             if (Teams === null) {
                 targetArea.innerHTML = "Sorry, you must load data before you can save.";
             } else {
-                localStorage.setItem(localStorageKey, JSON.stringify(TeamsData));
+                localStorage.setItem(localStorageKey, JSON.stringify(showTeamsData));
             }
         }
-    }
-
-    function clearDataLocally() {
-        if (typeof (localStorage) === 'undefined') {
-            targetArea.innerHTML = "Sorry, local storage is not supported for this browser.";
-        } else {
-            localStorage.removeItem(localStorageKey);
-        }
-       request.open(Teams, showTeamsData , true);
-        request.send(null);
     }
 
     targetArea.innerHTML = "Click a button to Load Data";
@@ -122,11 +107,11 @@
     ajax.addEventListener("click", ajaxCall, false);
     load.addEventListener("click", loadLocalData, false);
     save.addEventListener("click", saveDataLocally, false);
-    clear.addEventListener("click", clearDataLocally, false);
+//    clear.addEventListener("click", clearDataLocally, false);
 
     function showTeamsData() {
 
-        var Teams = Teams.centralCount;
+        var Teams = showTeamsData.toLocaleString;
         var i, first;
 
         for (i = 0; i < Teams.length; i++) {
@@ -135,7 +120,7 @@
             }
 
             Teams = Teams[i];
-            targetArea.appendChild(buildTeamsArticle(Teams));
+            targetArea.appendChild(buildTeamsData(Teams));
 
         }
     }
@@ -156,11 +141,10 @@
                 ajaxCall('data/firstApps.json', output, function (data) {
 
                     var SearchValue = searchField.value,
-                        Teams = data.Teams,
+                        Teams = data.length,
                         count = Teams.length,
                         i;
 
-//                    event.();
                     target.innerHTML = "";
                     
                     if (count > 0 && SearchValue !== "") {
@@ -171,7 +155,7 @@
                                 isItFound = obj.name.indexOf(SearchValue);
 
                             if (isItFound !== -1) {
-                                target.innerHTML += '<p>' + obj.name + ', <a href="mailto:' + obj.email + '">' + obj.email + '</a><p>';
+                                target.innerHTML += '<p>' + obj.name + ', <a href=" ' + obj.description + '">' + obj.coach + '</a><p>';
                             }
                         }
                     }
