@@ -1,0 +1,49 @@
+{
+    "games" : [
+        {
+            "title" : "Binding of Isaac",
+            "genre" : "Rogue-Like",
+            "rank" : "1",
+            "publisher" : "Edmund McMillen",
+            "information" : "http://store.steampowered.com/app/113200/",
+            "image" : "project/Images/Binding_Of_Isaac.jpg"
+            },
+        {
+            "title" : "Axiom Verge",
+            "genre" : "Metroidvania",
+            "rank" : "2",
+            "publisher" : "Thomas Happ Games LLC",
+"information" : "http://store.steampowered.com/app/332200/",
+"image" : "project/Images/Axiom_Verge.png"
+            },
+        {
+            "title" : "Shovel Knight",
+            "genre" : "Platformer",
+            "rank" : "3",
+            "publisher" : "Yacht Club Games",
+            "information" : "http://store.steampowered.com/app/250760/",
+            "image" : "project/Images/Shovel_knight_cover.jpg"
+
+            },
+        {
+            "title" : "Hitogeta Happa",
+            "genre" : "Shoot-Em-Up",
+            "rank" : "4",
+            "publisher" : "Rockin Android	",
+            "information" : "http://store.steampowered.com/app/92210/",
+            "image" : "project/Images/Hitogata_Happa.jpg"
+
+            },
+        {
+            "title" : "Jamestown",
+            "genre" : "Shoot-Em-Up",
+            "rank" : "5",
+            "publisher" : "Final Form Games",
+            "information" : "http://store.steampowered.com/app/94200/",
+            "image" : "project/Images/JamestownBoxArt.png"
+
+
+            }
+
+            ]
+}
