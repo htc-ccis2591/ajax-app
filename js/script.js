@@ -22,7 +22,7 @@ outputElement.innerHTML = "Data Loading";
 
     request.onreadystatechange = function() {
         if(request.readyState == 4 && request.status == 200){
-             var games = JSON.stringify(responseText);
+             var games = JSON.parse(request.responseText);
             if(typeof callback == "function"){
                 callback(games);
             }
