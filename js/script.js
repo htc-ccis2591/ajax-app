@@ -10,7 +10,8 @@ function getHttpObject(){
     else if(window.ActiveXObject) {
 //        check for ie6
         xhr = new ActiveXObject("Msxml2.XMLHTTP");
-    }    
+    }
+    return xhr;
 }
 
 function ajaxCall(dataUrl, outputElement, callback){
@@ -20,8 +21,8 @@ var request = getHttpObject();
 outputElement.innerHTML = "Data Loading";
 
     request.onreadystatechange = function() {
-        if(request.readyState = 4 && request.status == 200){
-             var games = JSON.parse(request.responseText);
+        if(request.readyState == 4 && request.status == 200){
+             var games = JSON.stringify(responseText);
             if(typeof callback == "function"){
                 callback(games);
             }
@@ -99,13 +100,13 @@ outputElement.innerHTML = "Data Loading";
             
             var output = document.getElementById("output");
             
-             ajaxCall('project/data/games.json', output, function (data) {
+             ajaxCall('data/games.json', output, function (data) {
             
             
             
             var searchValue = searchField.value,
             listGames = data.games,     
-            count = list.games.length, 
+            count = listGames.length, 
             i;
             
             event.preventDefault();
@@ -116,7 +117,7 @@ outputElement.innerHTML = "Data Loading";
                 
                 for(i = 0; i < count; i ++){
                     
-                    var obj = list.games[i],
+                    var obj = listGames[i],
                      isItFound = obj.title.indexOf(searchValue);
                     
                     if (isItFound !== -1){
@@ -170,10 +171,10 @@ outputElement.innerHTML = "Data Loading";
         getAllTitles : function(){
                  var output = document.getElementById("output");
                  
-             ajaxCall('project/data/games.json', output, function (data) {
+             ajaxCall('data/games.json', output, function (data) {
                  
             var listGames = data.games,     
-            count = list.games.length, 
+            count = listGames.length, 
             i;
                  
                  
@@ -184,7 +185,7 @@ outputElement.innerHTML = "Data Loading";
                 
                 for(i = 0; i < count; i ++){
                     
-                    var obj = list.games[i];
+                    var obj = listGames[i];
                     
                       target = document.getElementById("output");
                         var gTitle = document.createElement("p");
