@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="uft-8">
+        <title>Top 5 Steam Games</title>
+        <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+       
+        <h1>Ryan's Top 5 Steam Games</h1>
+        
+         
+    </head>
+        <body>
+         
+            
+            <form action="" method="get" id="search-form">
+                <div>
+                <label>Search by Title</label>
+                <input type="search" id="sInput" required placeholder="type a title" autocomplete="off">
+                    <button id="btnSearch" type="submit">Search</button>
+                    
+                </div>
+           
+                <div>
+            <button  id="btnAllGames" type="button">Get All Games</button>
+<!--
+            <button hidden="true" id="btnOrByTitle">Order by Title</button>
+            <button hidden="true" id="btnOrByGenre">Order by Genre</button>
+            <button hidden="true" id="btnOrByRank">Order by Rank</button>
+-->
+            <button id="btnAjaxLoad" type="button">Ajax Load</button>
+            <button id="btnLocalLoad" type="button">Local Load</button>
+            <button id="btnLocalSave" type="button">Local Save</button>
+            <button id="btnLocalClear" type="button">Local Clear</button>
+                </div>
+            </form>
+         <div id="output" aria-atomic="true" aria-live="polite"></div>
+            
+<script src="js/script.js"></script>            
+       </body>
+    
+</html>
