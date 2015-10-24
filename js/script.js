@@ -1,14 +1,14 @@
 //function for return of correct ajax object for cross browser
 
-  (function(){
+ 
    
  
 function getHttpObject(){
-    if(document.getElementById("btnAjaxLoad").onclick != function()){
-       outputElement.innerHTML = "No data";
-       }
-       else
-       {
+//    if(document.getElementById("btnAjaxLoad").onclick != function()){
+//       outputElement.innerHTML = "No data";
+//       }
+//       else
+//       {
     var xhr;
     var ajaxLoad = document.getElementById("btnAjaxLoad");
     
@@ -22,7 +22,7 @@ function getHttpObject(){
     }
     return xhr;
   }
-}
+//}
    
    
 
@@ -40,12 +40,16 @@ outputElement.innerHTML = "Data Loading";
             }
         }
     }
+//    saveData : function(){
+//    sessionStorage.setItem("title", JSON.stringify(request.responseText);
+////    sessionStorage.getItem("title");                       
+//                           } 
 
     request.open("GET", dataUrl, true);
     request.send(null);
-
-}
    
+}
+
 
 //
 //
@@ -99,11 +103,13 @@ outputElement.innerHTML = "Data Loading";
 //            }
 //            
 //            ]};
+
+    (function(){
     
     var searchForm = document.getElementById("search-form");
     var searchField = document.getElementById("sInput");
     var getAll = document.getElementById("btnAllGames");
-    
+    var saveItem = document.getElementById("btnLocalSave"); 
     var ajaxLoad = document.getElementById("btnAjaxLoad");
     
     var target = document.getElementById("output");
@@ -252,6 +258,7 @@ outputElement.innerHTML = "Data Loading";
     
         searchField.addEventListener("keyup", gameListMethod.search, false);
         
+//        saveItem.addEventListener("click",  
     
     
                       
