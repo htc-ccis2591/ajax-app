@@ -1,7 +1,16 @@
 //function for return of correct ajax object for cross browser
+
+  (function(){
+   
+ 
 function getHttpObject(){
-    
+    if(document.getElementById("btnAjaxLoad").onclick != function()){
+       outputElement.innerHTML = "No data";
+       }
+       else
+       {
     var xhr;
+    var ajaxLoad = document.getElementById("btnAjaxLoad");
     
     if(window.XMLHttpRequest){
         xhr = new XMLHttpRequest();
@@ -12,12 +21,15 @@ function getHttpObject(){
         xhr = new ActiveXObject("Msxml2.XMLHTTP");
     }
     return xhr;
+  }
 }
+   
+   
 
 function ajaxCall(dataUrl, outputElement, callback){
     
 var request = getHttpObject();
-    
+   
 outputElement.innerHTML = "Data Loading";
 
     request.onreadystatechange = function() {
@@ -28,11 +40,12 @@ outputElement.innerHTML = "Data Loading";
             }
         }
     }
+
     request.open("GET", dataUrl, true);
     request.send(null);
+
 }
-
-
+   
 
 //
 //
@@ -86,7 +99,7 @@ outputElement.innerHTML = "Data Loading";
 //            }
 //            
 //            ]};
-(function(){
+    
     var searchForm = document.getElementById("search-form");
     var searchField = document.getElementById("sInput");
     var getAll = document.getElementById("btnAllGames");
@@ -239,7 +252,6 @@ outputElement.innerHTML = "Data Loading";
     
         searchField.addEventListener("keyup", gameListMethod.search, false);
         
-       
     
     
                       
