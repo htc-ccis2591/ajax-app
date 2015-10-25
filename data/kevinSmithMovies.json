@@ -1,4 +1,4 @@
-﻿{
+{
         items: [
             {
                 title: "Clerks",
@@ -49,5 +49,5 @@
                 year: "2006",
                 cast: "Brian O'Hallaron, Jeff Anderson, Jason Mewes, Kevin Smith, Rosario Dawson, Trevor Fehrman, Ben Affleck, Jason Lee",
            }
-           ]
+        ]
     }
