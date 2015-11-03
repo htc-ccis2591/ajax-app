@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Kids Schedule</title>
+<style>
+.active { background:#ddd; }
+.hovering { background:#eee; }
+form > div { padding:10px; }
+</style>
+
+</head>
+<body>
+	
+<div id="photoShowContainer">
+  <div id="photoShowWrap">
+    <div id="photoShow">
+      
+        <img src="http://dribbble.s3.amazonaws.com/users/4467/screenshots/137120/shot_1301059844.jpg"/>
+      
+        <img src="http://dribbble.s3.amazonaws.com/users/4467/screenshots/304344/tony-the-tiger.jpg"/>
+      
+        <img id="one" src="http://dribbble.s3.amazonaws.com/users/4467/screenshots/308970/toucan-sam.jpg"/>
+		<img src="images/minion.jpe"/>
+    </div>
+  </div>
+</div>
+
+
+<h1>My Kids Schedule</h1>
+
+<form action="" method="get" id="search-form">
+
+<div>
+<label for="q">Search Kid's Schedule</label>
+<input type="search" id="q" name="q" required placeholder="type a name" autocomplete="off">
+</div>
+	
+	
+
+<div class="button-group">
+<button type="submit" id="search-btn">search</button>
+<button type="button" id="get-all">get all appointments</button>
+</div><!--/.button-group-->
+
+</form>
+<div id="output" aria-atomic="true" aria-live="polite"></div><!--/#output-->
+
+<script src="js/schedulebook.js"></script>
+	
+
+</body>
+</html>
