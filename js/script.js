@@ -42,12 +42,12 @@ outputElement.innerHTML = "Data Loading";
     }
 //    saveData : function(){
 //    sessionStorage.setItem("title", JSON.stringify(request.responseText);
-////    sessionStorage.getItem("title");                       
-//                           } 
+//    sessionStorage.getItem("title");                       
+//    },
 
     request.open("GET", dataUrl, true);
     request.send(null);
-   
+    
 }
 
 
@@ -111,10 +111,11 @@ outputElement.innerHTML = "Data Loading";
     var getAll = document.getElementById("btnAllGames");
     var saveItem = document.getElementById("btnLocalSave"); 
     var ajaxLoad = document.getElementById("btnAjaxLoad");
-    
+    var clearItem = document.getElementById("btnLocalClear");
     var target = document.getElementById("output");
     
     var gameListMethod = {
+        gameData : "",
         search : function(event){ 
             
             var output = document.getElementById("output");
@@ -122,7 +123,7 @@ outputElement.innerHTML = "Data Loading";
              ajaxCall('data/games.json', output, function (data) {
             
             
-            
+            gameListMethod.gameData = data
             var searchValue = searchField.value,
             listGames = data.games,     
             count = listGames.length, 
@@ -191,7 +192,7 @@ outputElement.innerHTML = "Data Loading";
                  var output = document.getElementById("output");
                  
              ajaxCall('data/games.json', output, function (data) {
-                 
+             gameListMethod.gameData = data;    
             var listGames = data.games,     
             count = listGames.length, 
             i;
@@ -241,6 +242,14 @@ outputElement.innerHTML = "Data Loading";
 //            end ajax callS
         
         },
+        localSave : function() {
+            var stringData = JSON.stringify(gameListMethod.gameData)
+            localStorage.setItem("saveobject",stringData);
+        },
+        localClear : function() {
+            localStorage.removeItem("saveobject");
+        },
+            
         setActiveSection : function(){
             
             this.parentNode.setAttribute("class", "active");
@@ -257,6 +266,11 @@ outputElement.innerHTML = "Data Loading";
         searchForm.addEventListener("submit", gameListMethod.search, false);
     
         searchField.addEventListener("keyup", gameListMethod.search, false);
+        
+        saveItem.addEventListener("click", gameListMethod.localSave, false); 
+        
+        clearItem.addEventListener("click", gameListMethod.localClear, false);
+        
         
 //        saveItem.addEventListener("click",  
     
