@@ -62,8 +62,8 @@
         request.send(null);
         
     }
-        
-    function showLocationsData() {
+
+    function showData() {
         var locations = data.locations;
         var i, list;
 
