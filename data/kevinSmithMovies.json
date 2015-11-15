@@ -1,53 +1,54 @@
 {
-        items: [
-            {
-                title: "Clerks",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "1994",
-                cast: "Brian O'Halloran, Jeff Anderson, Marilyn Ghigliotti, Lisa Spoonauer, Jason Mewes, Kevin Smith, Walt Flanagan",
+    "titles" : 
+    [
+        {
+            "title": "Clerks",
+            "director": "Kevin Smith",
+            "producer": "Scott Mosier",
+            "year": "1994",
+            "cast": "Brian O'Halloran, Jeff Anderson, Marilyn Ghigliotti, Lisa Spoonauer, Jason Mewes, Kevin Smith, Walt Flanagan",
            },
-            {
-                title: "Mallrats",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "1995",
-                cast: "Shannen Doherty, Jeremy London, Jason Lee, Claire Forlani, Ben Affleck, Joey Lauren Adams, Jason Mewes, Kevin Smith",
+        {
+            "title": "Mallrats",
+            "director": "Kevin Smith",
+            "producer": "Scott Mosier",
+            "year": "1995",
+            "cast": "Shannen Doherty, Jeremy London, Jason Lee, Claire Forlani, Ben Affleck, Joey Lauren Adams, Jason Mewes, Kevin Smith",
            },
-            {
-                title: "Chasing Amy",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "1997",
-                cast: "Joey Lauren Adams, Ben Affleck, Jason Lee, Dwight Ewell, Jason Mewes, Kevin Smith",
+        {
+            "title": "Chasing Amy",
+            "director": "Kevin Smith",
+            "producer": "Scott Mosier",
+            "year": "1997",
+            "cast": "Joey Lauren Adams, Ben Affleck, Jason Lee, Dwight Ewell, Jason Mewes, Kevin Smith",
            },
-            {
-                title: "Dogma",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "1999",
-                cast: "Linda Fiorentino, Ben Affleck, Matt Damon, Alan Rickman, Jason Lee, Chris Rock, Salma Hayek, Jason Mewes, Kevin Smith",
+        {
+            "title": "Dogma",
+            "director": "Kevin Smith",
+            "producer": "Scott Mosier",
+            "year": "1999",
+            "cast": "Linda Fiorentino, Ben Affleck, Matt Damon, Alan Rickman, Jason Lee, Chris Rock, Salma Hayek, Jason Mewes, Kevin Smith",
            },
-            {
-                title: "Jay and Silent Bob Strike Back",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "2001",
-                cast: "Jason Mewes, Kevin Smith, Ben Affleck, Shannon Elizabeth, Eliza Dushku, Will Ferrell, Jason Lee, Jennifer Schwalbach",
+        {
+            "title": "Jay and Silent Bob Strike Back",
+            "director": "Kevin Smith",
+            "producer": "Scott Mosier",
+            "year": "2001",
+            "cast": "Jason Mewes, Kevin Smith, Ben Affleck, Shannon Elizabeth, Eliza Dushku, Will Ferrell, Jason Lee, Jennifer Schwalbach",
            },
-            {
-                title: "Jersey Girl",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "2004",
-                cast: "Ben Affleck, Jennifer Lopez, Liv Tyler, George Carlin, Steven Root, Jennifer Schwalbach",
+        {
+            "title": "Jersey Girl",
+            "director": "Kevin Smith",
+            "producer": "Scott Mosier",
+            "year": "2004",
+            "cast": "Ben Affleck, Jennifer Lopez, Liv Tyler, George Carlin, Steven Root, Jennifer Schwalbach",
            },
-            {
-                title: "Clerks II",
-                director: "Kevin Smith",
-                producer: "Scott Mosier",
-                year: "2006",
-                cast: "Brian O'Hallaron, Jeff Anderson, Jason Mewes, Kevin Smith, Rosario Dawson, Trevor Fehrman, Ben Affleck, Jason Lee",
+        {
+            "title": "Clerks II",
+            "director": "Kevin Smith",
+            "producer": "Scott Mosier",
+            "year": "2006",
+            "cast": "Brian O'Hallaron, Jeff Anderson, Jason Mewes, Kevin Smith, Rosario Dawson, Trevor Fehrman, Ben Affleck, Jason Lee",
            }
         ]
-    }
+}
