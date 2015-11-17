@@ -1,31 +1,31 @@
 {
     "socialNetworks" : [
         {
-            "image": "images/facebook.gif",
+            "image": "facebook.gif",
             "site": "Facebook",
             "link": "http://www.facebook.com",
             "desc": "900,000,000 - Estimated Unique Monthly Visitors | 2- Alexa Rank"
         },
         {
-            "image": "images/twitter.gif",
+            "image": "twitter.gif",
             "site": "Twitter",
             "link": "http://www.twitter.com",
             "desc": "310,000,000 - Estimated Unique Monthly Visitors | 8- Alexa Rank"
         },
         {
-            "image": "images/linkedin.gif",
+            "image": "linkedin.gif",
             "site": "LinkedIn",
             "link": "http://www.linkedin.com",
             "desc": "255,000,000 - Estimated Unique Monthly Visitors | 9- Alexa Rank"
         },
         {
-            "image": "images/pinterest.gif",
+            "image": "pinterest.gif",
             "site": "Pinterest",
             "link": "http://www.pinterest.com/",
             "desc": "250,000,000 - Estimated Unique Monthly Visitors | 26- Alexa Rank"
         },
         {
-            "image": "images/instagram.gif",
+            "image": "instagram.gif",
             "site": "Instagram",
             "link": "http://www.instagram.com",
             "desc": "100,000,000 - Estimated Unique Monthly Visitors | 36- Alexa Rank"

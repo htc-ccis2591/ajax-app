@@ -1,3 +1,5 @@
+/*socialNet*/
+
 body {
     background-color: #000000;
 	font-family: Georgia, serif;
@@ -36,16 +38,20 @@ a:visited
 }
 h2
 {
-    padding: 2px;
+    padding: 1px;
     margin-top: 0px;
+    margin-bottom: 19px;
     text-indent: 1em;
     background-color: #99FF33;
     font-family: Georgia, serif;
 }
 p
 {
-    text-indent: 1em;
+
     font-family: Georgia, serif;
+    text-indent: 10em;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 img
 {
@@ -55,7 +61,7 @@ img
 .float
 {
     float: left;
-    margin-left: 0px;
+
 }
 #network
 {
@@ -71,3 +77,14 @@ footer
     padding: 3px;
     border: 3px solid #0033FF;
 }
+
+
+h4
+{
+    font-family: Georgia, serif;
+    text-indent: 1em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
