@@ -32,6 +32,11 @@
 .pagebuttons{
     float: left;
 }
-h3{
+.favpanel{
+    
     margin-top: 30px;
+}
+.favimage{
+max-width:100%;
+
 }
