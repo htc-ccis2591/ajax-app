@@ -1,0 +1,37 @@
+﻿<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Joes Liquers</title>
+    <link href="style/style.css" rel="stylesheet" />
+</head>
+
+<body>
+<h1 class = "topicbar">Liquors</h1>
+    
+        <select id="inventorydropdown">
+            <option value =""></option>
+        </select>
+    
+        <div id="holder" class="hide"></div>
+        <div id="imgholder"></div>
+        <div id="producttable">
+        <button type="button" id="favbutton" class ="clicktofavorite"></button>
+        <h2 id="itemheader" class ="iteminfo"></h2>
+        <p id ="cost" class ="iteminfo"></p>
+        <p id ="proof" class ="iteminfo"></p>
+        </div>
+    <h1 class = "topicbar">User Favorites</h1>
+    <button id ="clearbutton" class="pagebuttons">Clear Favorites</button>
+    <button id ="loadbutton" class="pagebuttons">Load Favorites</button>
+    
+    <div id ="favoritesdisplay">
+
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="Script.js"></script>
+</body>
+</html>
