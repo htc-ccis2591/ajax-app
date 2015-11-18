@@ -76,6 +76,14 @@
             return emptyBox;
 
         },
+        
+        searchBoxShow: function () {
+            
+            var showBox = $("#searchLabel").removeAttr("class");
+            
+            return showBox;
+            
+        },
 
         getFromSessionData: function () {
 
@@ -253,6 +261,7 @@
                 bookList.saveToSessionData(data);
                 bookList.displayBooks(data);
 
+                bookList.searchBoxShow();
                 bookList.ajaxButtonHide();
                 bookList.saveButtonShow();
 
@@ -269,7 +278,6 @@
 
             ajaxCall.click(function () {
                 
-                bookList.clearTextBox();
                 bookList.getAllBooks();
                 
             })
