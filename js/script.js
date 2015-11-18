@@ -40,69 +40,12 @@ outputElement.innerHTML = "Data Loading";
             }
         }
     }
-//    saveData : function(){
-//    sessionStorage.setItem("title", JSON.stringify(request.responseText);
-//    sessionStorage.getItem("title");                       
-//    },
-
+//   
     request.open("GET", dataUrl, true);
     request.send(null);
     
 }
 
-
-//
-//
-//(function() {
-//    var list = {
-//        games : [
-//            {
-//                title: "Binding of Isaac",
-//                genre: "Rogue-Like",
-//                rank: "1",
-//                publisher: "Edmund McMillen",
-//                information: "http://store.steampowered.com/app/113200/",
-//                image: "Images/Binding_Of_Isaac.jpg" 
-//                
-//            },
-//            {
-//                 title: "Axiom Verge",
-//                genre: "Metroidvania",
-//                rank: "2",
-//                publisher: "Thomas Happ Games LLC",
-//                information: "http://store.steampowered.com/app/332200/",
-//                image: "Images/Axiom_Verge.png"
-//                
-//            },
-//               {
-//                 title: "Shovel Knight",
-//                genre: "Platformer",
-//                rank: "3",
-//                publisher: "Yacht Club Games",
-//                information: "http://store.steampowered.com/app/250760/",
-//                image: "Images/Shovel_knight_cover.jpg"
-//                
-//            },
-//                    {
-//                 title: "Hitogeta Happa",
-//                genre: "Shoot-Em-Up",
-//                rank: "4",
-//                publisher: "Rockin Android	",
-//                information: "http://store.steampowered.com/app/92210/",
-//                image: "Images/Hitogata_Happa.jpg"
-//                
-//            },
-//                    {
-//                 title: "Jamestown",
-//                genre: "Shoot-Em-Up",
-//                rank: "5",
-//                publisher: "Final Form Games",
-//                information: "http://store.steampowered.com/app/94200/",
-//                image: "Images/JamestownBoxArt.png"
-//              
-//            }
-//            
-//            ]};
 
     (function(){
     
@@ -212,14 +155,14 @@ outputElement.innerHTML = "Data Loading";
                 for(i = 0; i < count; i ++){
                     
                     var obj = listGames[i];
-                    var labels = ["#item1", "#item2", "#item3", "#item4", "#item5"];
-                    var labelObj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
-                    jQuery.each(labels, function(i, val){
-                        labels = obj;
-                        $(labels.title).text(obj.title);
-                        return (val === "five"); 
-                    });
-//                    $("#item1").text(obj.title);
+//                    var labels = $(["#item1", "#item2", "#item3", "#item4", "#item5"]);
+//                    var labelObj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
+//                    jQuery.each(labels, function(i, val){
+//                       
+//                        $(labels.title).text(obj.title);
+//                        return (val === "five"); 
+//                    });
+                    $("#item" + i).text(obj.title);
                    
                     
                     
