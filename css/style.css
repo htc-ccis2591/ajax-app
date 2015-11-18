@@ -86,7 +86,7 @@ header {
     left: 300px;
 }
 
-#fullList p {
+#fullList p {    
     border-width: 3px;
     border-style: solid;
     border-left: none;
@@ -99,10 +99,27 @@ header {
     color: #336600;
 }
 
+.hide {
+    display: none;   
+}
+
+.showDesc {
+    font-size: 12px;
+    cursor:pointer;
+    position: relative;
+    bottom: 80px;
+}
+
 footer {
     text-align: center;
 }
 
-.hide {
-    display: none;   
+#searchBox {
+    margin-left: 14px;
 }
+
+#searchLabel {
+    margin-left: 50px;    
+}
+
+

@@ -1,77 +1,10 @@
 
-function getHTTPObject() {
-
-    var versionCheck;
-
-    if (window.XMLHttpRequest) {
-
-        versionCheck = new XMLHttpRequest();
-
-    } else if (window.ActiveXObject) {
-
-        versionCheck = new ActiveXObject("Msxml2.XMLHTTP");
-
-    }
-
-    return versionCheck;
-
-}
-
-function ajaxCall(dataUrl, outputElement, callback) {
-
-    var request = getHTTPObject();
-
-    outputElement.innerHTML = "Loading...";
-
-    request.onreadystatechange = function () {
-
-        if (request.readyState === 4 && request.status === 200) {
-
-            var bookData = JSON.parse(request.responseText);
-
-            if (typeof callback === "function") {
-
-                callback(bookData);
-
-            }
-
-        } else if (request.status === 404) {
-
-            outputElement.innerHTML = "Data does not exist... :("
-
-        }
-
-    }
-
-    request.open("GET", dataUrl, true);
-    request.send(null);
-
-}
 
 (function () {
 
-    var ajaxLoadButton = document.getElementById("ajaxLoadButton");
-    var localLoadButton = document.getElementById("localLoadButton");
-    var localSaveButton = document.getElementById("localSaveButton");
-    var localClearButton = document.getElementById("localClearButton");
-
     var bookList = {
 
-        getBookData: function () {
-
-            var bookDataAddr = "data/bookLibrary.json";
-
-            return bookDataAddr;
-
-        },
-
-        sessionData: function () {
-
-            var getData = sessionStorage.getItem("bookData");
-
-            return getData;
-
-        },
+        bookDataUrl: "data/bookLibrary.json",
 
         deleteStorage: function () {
 
@@ -79,173 +12,327 @@ function ajaxCall(dataUrl, outputElement, callback) {
 
         },
 
+        ajaxButtonHide: function () {
+
+            var $hideButton = $("#ajaxLoadButton").attr("class", "hide");
+
+            return $hideButton;
+
+        },
+
         loadButtonHide: function () {
 
-            var hideButton = localLoadButton.setAttribute("class", "hide");
+            var $hideButton = $("#localLoadButton").attr("class", "hide");
 
-            return hideButton;
+            return $hideButton;
 
         },
 
         saveButtonHide: function () {
 
-            var hideButton = localSaveButton.setAttribute("class", "hide");
+            var $hideButton = $("#localSaveButton").attr("class", "hide");
 
-            return hideButton;
+            return $hideButton;
 
         },
 
         clearButtonHide: function () {
 
-            var hideButton = localClearButton.setAttribute("class", "hide");
+            var $hideButton = $("#localClearButton").attr("class", "hide");
 
-            return hideButton;
+            return $hideButton;
 
         },
 
         loadButtonShow: function () {
 
-            var showButton = localLoadButton.removeAttribute("class");
+            var $showButton = $("#localLoadButton").removeAttr("class");
 
-            return showButton;
+            return $showButton;
 
         },
 
         saveButtonShow: function () {
 
-            var showButton = localSaveButton.removeAttribute("class");
+            var $showButton = $("#localSaveButton").removeAttr("class");
 
-            return showButton;
+            return $showButton;
 
         },
 
         clearButtonShow: function () {
 
-            var showButton = localClearButton.removeAttribute("class");
+            var $showButton = $("#localClearButton").removeAttr("class");
 
-            return showButton;
+            return $showButton;
+
+        },
+        
+        clearTextBox: function () {
+
+            var searchBox = $("#searchBox"),
+                emptyBox = $(searchBox).val("");
+
+            return emptyBox;
+
+        },
+
+        getFromSessionData: function () {
+
+            var getData = sessionStorage.getItem("bookData");
+
+            return getData;
+
+        },
+
+        saveToSessionData: function (data) {
+
+            var bookList = data;
+
+            if (typeof (sessionStorage) === "undefined") {
+                alert("Browser does not support storing session data");
+            } else {
+
+                var stringObject = JSON.stringify(bookList);
+                var session = sessionStorage.setItem("bookData", stringObject)
+
+            }
+
+        },
+
+        search: function (data) {
+
+            var searchField = $("#searchBox"),
+                searchValue = searchField.val(),
+                $listLocation = $("#fullList"),
+                books = data.books,
+                count = books.length;
+
+            event.preventDefault();
+
+            $listLocation.html("");
+
+            if (count > 0 && searchValue !== "") {
+
+                $.each(books, function (i, item) {
+
+                    var obj = item.name;
+
+                    var isItFound = obj.indexOf(searchValue);
+
+                    if (isItFound !== -1) {
+
+                        var name = item.name,
+                            series = item.series,
+                            image = item.image,
+                            author = item.author,
+                            genre = item.genre,
+                            description = item.description;
+
+                        $("<h3>", {
+                            text: name
+                        }).appendTo($listLocation);
+                        $("<h5>", {
+                            text: ("Series: " + series)
+                        }).appendTo($listLocation);
+                        $("<img>", {
+                            src: image
+                        }).appendTo($listLocation);
+                        $("<h4>", {
+                            text: ("Author: " + author)
+                        }).appendTo($listLocation);
+                        $("<h6>", {
+                            text: ("Genre: " + genre)
+                        }).appendTo($listLocation);
+                        $("<p>", {
+                            class: "hide",
+                            text: description
+                        }).appendTo($listLocation);
+                        $("<div>", {
+                            id: "expand",
+                            class: "showDesc",
+                            text: ("Show Description")
+                        }).appendTo($listLocation);
+
+                    }                 
+
+                })
+                
+               bookList.toggleDescription();
+
+            }
+
+        },
+
+        displayBooks: function (data) {
+
+            var $listLocation = $("#fullList"),
+                searchBox = $("#searchBox");
+
+            var books = data.books,
+                count = books.length;
+
+            $listLocation.html("");
+
+            if (count > 0) {
+
+                $.each(books, function (i, item) {
+
+                    var name = item.name,
+                        series = item.series,
+                        image = item.image,
+                        author = item.author,
+                        genre = item.genre,
+                        description = item.description;
+
+                    $("<h3>", {
+                        text: name
+                    }).appendTo($listLocation);
+                    $("<h5>", {
+                        text: ("Series: " + series)
+                    }).appendTo($listLocation);
+                    $("<img>", {
+                        src: image
+                    }).appendTo($listLocation);
+                    $("<h4>", {
+                        text: ("Author: " + author)
+                    }).appendTo($listLocation);
+                    $("<h6>", {
+                        text: ("Genre: " + genre)
+                    }).appendTo($listLocation);
+                    $("<p>", {
+                        class: "hide",
+                        text: description
+                    }).appendTo($listLocation);
+                    $("<div>", {
+                        id: "expand",
+                        class: "showDesc",
+                        text: ("Show Description")
+                    }).appendTo($listLocation);
+
+                });
+
+                bookList.toggleDescription();
+
+                searchBox.keyup(function () {
+
+                    bookList.search(data)
+
+                })
+
+            }
+
+        },
+
+        toggleDescription: function () {
+
+            var showDescription = $(".showDesc"),
+                descriptionLocation = $(".showDesc").prev();
+
+            $(showDescription).click(function () {
+
+                $(descriptionLocation).slideToggle("slow", function () {
+
+                    var visible = $(descriptionLocation).is(":visible");
+                    $(showDescription).text(visible ? "Hide Description" : "Show Description");
+
+                });
+
+            })
 
         },
 
         getAllBooks: function () {
 
-            var listLocation = document.getElementById("fullList");
+            $.getJSON(bookList.bookDataUrl, function (data) {
 
-            ajaxCall(bookList.getBookData(), listLocation, function (data) {
+                var $listLocation = $("#fullList");
 
-                var bList = data;
+                $listLocation.html("Loading ....");
 
-                if (typeof (sessionStorage) === "undefined") {
-                    alert("Browser does not support storing session data");
-                } else {
-                    
-                    var stringObject = JSON.stringify(bList);
-                    var session = sessionStorage.setItem("bookData", stringObject)
-                    
-                }
+                bookList.saveToSessionData(data);
+                bookList.displayBooks(data);
 
-                var prBookList = data.books,
-                    count = prBookList.length;
-
-                listLocation.innerHTML = "";
-
-                if (count > 0) {
-
-                    for (i = 0; i < count; i = i + 1) {
-                        var bookCount = prBookList[i];
-
-                        var bookNameElement = document.createElement("h3");
-                        var bookAuthorElement = document.createElement("h4");
-                        var bookSeriesElement = document.createElement("h5");
-                        var bookGenreElement = document.createElement("h6");
-                        var bookImgElem = document.createElement("img");
-                        var bookDescElem = document.createElement("p");
-
-                        var bookName = document.createTextNode(bookCount.name);
-                        var bookAuthor = document.createTextNode("Author: " + bookCount.author);
-                        var bookSeries = document.createTextNode("Series: " + bookCount.series);
-                        var bookGenre = document.createTextNode("Genre: " + bookCount.genre);
-                        var bookDesc = document.createTextNode(bookCount.description);
-
-                        bookNameElement.appendChild(bookName);
-                        listLocation.appendChild(bookNameElement);
-
-                        bookSeriesElement.appendChild(bookSeries);
-                        listLocation.appendChild(bookSeriesElement);
-
-                        bookImgElem.setAttribute("src", bookCount.image);
-                        listLocation.appendChild(bookImgElem);
-
-                        bookAuthorElement.appendChild(bookAuthor);
-                        listLocation.appendChild(bookAuthorElement);
-
-                        bookGenreElement.appendChild(bookGenre);
-                        listLocation.appendChild(bookGenreElement);
-
-                        bookDescElem.appendChild(bookDesc);
-                        listLocation.appendChild(bookDescElem);
-
-                    }
-
-                    bookList.saveButtonShow();
-                    bookList.clearButtonShow();
-
-                }
+                bookList.ajaxButtonHide();
+                bookList.saveButtonShow();
 
             });
 
         },
 
-        loadAllBooks: function () {
+        buttonFunction: function () {
 
-            if (typeof (localStorage) === "undefined") {
-                alert("Browser does not support storing local data");
-            } else {
+            var ajaxCall = $("#ajaxLoadButton"),
+                saveButton = $("#localSaveButton"),
+                loadButton = $("#localLoadButton"),
+                clearButton = $("#localClearButton");
 
-                var storedItem = localStorage.getItem("bookData");
-                var savedBookData = JSON.parse(storedItem);
+            ajaxCall.click(function () {
+                
+                bookList.clearTextBox();
+                bookList.getAllBooks();
+                
+            })
 
-                alert(savedBookData.books[3].description);
+            loadButton.click(function () {
 
-            }
+                var $listLocation = $("#fullList");
+
+                if (typeof (localStorage) === "undefined") {
+                    alert("Browser does not support storing local data");
+                } else {
+
+                    var storedItem = localStorage.getItem("bookData");
+                    var data = JSON.parse(storedItem);
+
+                    $listLocation.html("Loading from local storage ...");
+
+                    bookList.displayBooks(data);
+                    bookList.clearTextBox();
+
+                }
+                
+            })
+
+            saveButton.click(function () {
+
+                if (typeof (localStorage) === "undefined") {
+                    alert("Browser does not support storing local data");
+                } else {
+
+                    localStorage.setItem("bookData", bookList.getFromSessionData());
+                    bookList.loadButtonShow();
+                    bookList.clearButtonShow();
+                    bookList.saveButtonHide();
+                    
+                }
+
+            })
+
+            clearButton.click(function () {
+
+                if (typeof (localStorage) === "undefined") {
+                    alert("Browser does not support storing local data");
+                } else {
+
+                    bookList.deleteStorage();
+                    bookList.loadButtonHide();
+                    bookList.clearButtonHide();
+                    bookList.saveButtonShow();
+
+                }
+
+            })
 
         },
-        
-        saveAllBooks: function () {
 
-            if (typeof (localStorage) === "undefined") {
-                alert("Browser does not support storing local data");
-            } else {
-
-                localStorage.setItem("bookData", bookList.sessionData());
-                bookList.loadButtonShow();
-                
-            }
-
-        },
-        
-        clearSavedData: function () {
-
-            if (typeof (localStorage) === "undefined") {
-                alert("Browser does not support storing local data");
-            } else {
-
-                bookList.deleteStorage();
-                bookList.loadButtonHide();
-                
-            }
-
-        }
     }
 
     bookList.loadButtonHide();
     bookList.saveButtonHide();
     bookList.clearButtonHide();
 
-    ajaxLoadButton.addEventListener("click", bookList.getAllBooks, false);
-    localLoadButton.addEventListener("click", bookList.loadAllBooks, false);
-    localSaveButton.addEventListener("click", bookList.saveAllBooks, false);
-    localClearButton.addEventListener("click", bookList.clearSavedData, false);
+    bookList.buttonFunction();
 
 })();
         
