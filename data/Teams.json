@@ -1,0 +1,99 @@
+{
+
+        "Teams": [
+            {
+                "team": "Chicago Blackhawks",
+                "location": "Chicago, IL",
+                "image": "images/hawks.png",
+                "arena": "United Center",
+                "manager": "Stan Bowman",
+                "coach": "Joel Quenneville",
+                "description": "Lead by Captain Johnathon Towes & Partick Kane the Blackhawks are the reigning 2014-15 Stanley Cup Champions",
+                "link": ""
+            },
+
+            {
+                "team": "Colorado Avalanche",
+                "location": "Denver, CO",
+                "image": "images/lanche.png",
+                "arena": "Pepsi Center",
+                "manager": "Joe Sakic",
+                "coach": "Patrick Roy",
+                "description": "Lead by Gabriel Landeskog, the Av's look to return to form with another Playoffs push in 2015-16.",
+                "link": ""
+                
+             },
+
+            {
+                "team": "Dallas Stars",
+                "location": "Dallas, TX",
+                "image": "images/stars.png",
+                "arena": "American Airlines Center",
+                "manager": "Jim Nill",
+                "coach": "Lindy Ruff",
+                "description": "Lead by returning 2014-15 Art Ross Scoring Leader Jamie Benn, the Stars hope for another solid season.",
+                "link": ""
+
+             },
+
+            {
+                "team": "Minnesota Wild",
+                "location": "Saint Paul, MN",
+                "image": "images/wild.png",
+                "arena": "Xcel Energy Center",
+                "manager": "Craig Leopold",
+                "coach": "Mike Yeo",
+                "description": "Lead by captain Mikko Koivu along with Zach Parise and Ryan Suter, the wild hope to make a return playoff push.",
+                "link": ""
+
+             },
+
+            {
+                "team": "Nashville Predators",
+                "location": "Nashville, TN",
+                "image": "images/preds.png",
+                "arena": "Bridgestone Arena",
+                "manager": "David Poile",
+                "coach": "Peter Laviolette",
+                "description": "Lead by veteran captain Shea Weber the Preds hope to make a return to the playoffs in 2015-16",
+                "link": ""
+
+             },
+
+            {
+                "team": "St. Louis Blues",
+                "location": "St. Louis, MO",
+                "image": "images/blues.png",
+                "arena": "Scottrade Center",
+                "manager": "Doug Armstrong",
+                "coach": "Ken Hitchcock",
+                "description": "Lead by veteran captain David Backes the Blues hope to make a return to the playoffs in 2015-16",
+                "link": ""
+
+
+             },
+
+            {
+                "team": "Winnipeg Jets",
+                "location": "Winnipeg, MB",
+                "image": "images/jets.png",
+                "arena": "MTS Centre",
+                "manager": "Kevin Cheveldayoff",
+                "coach": "Paul Maurice",
+                "description": "Lead by captain Andrew Ladd the Jets are hoping to make a return to the playoffs in 2015-16",
+                "link": ""
+
+             },
+            {
+            "team": "X!",
+                "location": "gonna give it to ya.",
+                "arena": "you may know me from 'Pimp My Ride'",
+                "manager": "self-managed",
+                "coach": "self-coached",
+                "description": "They're all going to laugh at you!",
+            "image": "images/x.jpg",
+                "link": ""
+            }
+                ]
+
+    }
