@@ -1,0 +1,41 @@
+/* Fly Fishing Style Sheet */
+
+article, aside, figure, figcaption, footer, header, nav, section, img {
+    display: block;
+}
+
+body {
+
+   background-color: #757547;
+}
+
+article {
+    padding-bottom: 40px;
+    font-family: Papyrus, sans-serif;
+}
+
+header {
+    color: sienna;
+    font-family: Papyrus, sans-serif;
+    font-size: 4em;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    padding: 25px;
+}
+
+p {
+    font-size: 1.5em;
+    color: white;
+}
+
+#controls {
+    width: 500px;
+    margin: 0 auto 40px;
+        
+}
+
+button {
+    margin: 10px;
+    width: 100px;
+    box-shadow: 2px 2px black;
+}
