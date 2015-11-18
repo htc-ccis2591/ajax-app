@@ -213,9 +213,10 @@ outputElement.innerHTML = "Data Loading";
                     
                     var obj = listGames[i];
                     var labels = ["#item1", "#item2", "#item3", "#item4", "#item5"];
-                    var obj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
+                    var labelObj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
                     jQuery.each(labels, function(i, val){
-                        $(labels).Text(obj.title);
+                        labels = obj;
+                        $(labels.title).text(obj.title);
                         return (val === "five"); 
                     });
 //                    $("#item1").text(obj.title);
