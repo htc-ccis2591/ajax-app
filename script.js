@@ -105,8 +105,8 @@
             ajaxCall('data/firstApps.json', output, function (data) {
 
                 var SearchValue = searchField.value,
-                    x ``
-                Teams = data.length,
+
+                    Teams = data.length,
                     count = Teams.length,
                     i;
 
