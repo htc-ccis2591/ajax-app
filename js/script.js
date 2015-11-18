@@ -223,20 +223,19 @@ outputElement.innerHTML = "Data Loading";
 //            end ajax callS
         
         },
-//            radioButton : function(){
-//            $("#btnVote").click(function() {
-//                       if($("#rad1").is(":checked")){
-//                           $("#radioArea").append("<p>" + "Good choice" + obj.title + "is a great game!" + "<p/>");
-//                       }
-//                   });
-//            },
+
                     
         localSave : function() {
             var stringData = JSON.stringify(gameListMethod.gameData)
             localStorage.setItem("saveobject",stringData);
         },
-        localClear : function() {
+        localClear : function() { 
+            if(localStorage.saveobject === undefined){
+               target.innerHTML = "No data saved!"
+               }
+            else{
             localStorage.removeItem("saveobject");
+            }
         },
         
         localLoad : function() {
