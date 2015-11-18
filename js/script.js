@@ -109,7 +109,8 @@ outputElement.innerHTML = "Data Loading";
     var searchForm = document.getElementById("search-form");
     var searchField = document.getElementById("sInput");
     var getAll = document.getElementById("btnAllGames");
-    var saveItem = document.getElementById("btnLocalSave"); 
+    var saveItem = document.getElementById("btnLocalSave");
+    var localLoad = document.getElementById("btnLocalLoad");   
     var ajaxLoad = document.getElementById("btnAjaxLoad");
     var clearItem = document.getElementById("btnLocalClear");
     var target = document.getElementById("output");
@@ -173,6 +174,8 @@ outputElement.innerHTML = "Data Loading";
                         gLink.appendChild(linkTxtNode);
                         target.appendChild(gTitle);
                         
+//                        radio buttons
+                        
                         
                   
                          
@@ -188,6 +191,9 @@ outputElement.innerHTML = "Data Loading";
 //            end ajax call
                       
             },
+//        radioButtons : function() {
+//          $("#item1").text(obj.title);  
+//        },
         getAllTitles : function(){
                  var output = document.getElementById("output");
                  
@@ -206,13 +212,22 @@ outputElement.innerHTML = "Data Loading";
                 for(i = 0; i < count; i ++){
                     
                     var obj = listGames[i];
+                    var labels = ["#item1", "#item2", "#item3", "#item4", "#item5"];
+                    var obj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
+                    jQuery.each(labels, function(i, val){
+                        $(labels).Text(obj.title);
+                        return (val === "five"); 
+                    });
+//                    $("#item1").text(obj.title);
+                   
+                    
                     
                       target = document.getElementById("output");
                         var gTitle = document.createElement("p");
                         var gLink = document.createElement("a");
                         var linkTxtNode = document.createTextNode("Steam Page");
                         gLink.href = (obj.information);
-                    
+                     
                     var createImgElement = document.createElement("img");
                         createImgElement.src = (obj.image);
                         
@@ -249,6 +264,23 @@ outputElement.innerHTML = "Data Loading";
         localClear : function() {
             localStorage.removeItem("saveobject");
         },
+        
+        localLoad : function() {
+            if(localStorage.saveobject === undefined){
+                target.innerHTML = "No data saved!";
+            }
+            else{
+            result = localStorage.getItem("saveobject");
+                if(result === '""') {
+                    target.innerHTML = "Data is empty!";
+                }
+                else{
+                    data = JSON.parse(result);
+                 gameListMethod.getAllTitles(data);
+                }
+//               
+            }
+        },
             
         setActiveSection : function(){
             
@@ -270,7 +302,9 @@ outputElement.innerHTML = "Data Loading";
         saveItem.addEventListener("click", gameListMethod.localSave, false); 
         
         clearItem.addEventListener("click", gameListMethod.localClear, false);
-        
+
+        localLoad.addEventListener("click", gameListMethod.localLoad, false);
+         
         
 //        saveItem.addEventListener("click",  
     
