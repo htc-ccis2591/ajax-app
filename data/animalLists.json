@@ -1,0 +1,38 @@
+{
+    "animalList": [
+        {
+            "name": "Lion",
+            "picture": "images/lion.jpg",
+            "description": "The Lion (Panthera leo) is a mammal of the family Felidae and is one of four ‘big cats’ in the genus Panthera.The lion is the second largest cat, after the tiger. Lions are unique in that they are the only cats to live in groups (prides).While once found throughout much of Africa, Asia and Europe, lions are presently encountered in the wild only in Africa and in the Gir Forest of India (where it is found only in the Sasan-Gir National Park). A lions main habitats are open woodlands, savannas, scrub country and grassy plains."
+        },
+        {
+            "name": "Tiger",
+            "picture": "images/tiger.jpg",
+            "description": "The Tiger has a long body, a short neck, and a firm head with a short muzzle that contains a set of sharp teeth. Tigers have stout legs that end in broad paws. A well fed tiger is bulky, broad in the shoulders, back, and loins. Males are generally longer and heavier than females. The average length for males is about 6 feet long and with a tail length of 3 feet long. Females are usually 6 to 12 inches shorter in body length. A tiger's fur color varies from orange-red to tawny yellow, with a lot of black stripes that have different lengths and widths. The cheeks, throat, and the insides of the ears and legs are white. The back of the ear is black with a white spot in the center."
+        },
+        {
+            "name": "Wolf",
+            "picture": "images/wolf.jpg",
+            "description": "Wolves (Canis Lupus), are related to dogs, or more rightly, dogs are actually related to wolves. Wolves and dogs are quite similar in many ways, however, in most cases, wolves are larger animals. Wolves generally have longer legs than dogs. It is difficult to imagine, however, everything from a pug dog to a doberman comes from the wolf.The Wolf has developed the capacity to survive in the most inhospitable of climates. The wolves in the high arctic endure several winter months of perpetual darkness. Even in February when sun returns to the north, temperatures of -40°F and bitter winds are common. Other wolves are at home in the desert and the dampness of a humid Gulf Coast swamp."
+        },
+        {
+            "name": "Giraffe",
+            "picture": "images/giraffe.jpg",
+            "description": "The Giraffe (Giraffa camelopardalis meaning ‘fast walking camel leopard) is an African even-toed ungulate mammal, the tallest of all land-living animal species.The giraffe is related to deer and cattle, however, it is placed in a separate family, the Giraffidae, consisting only of the giraffe and its closest relative, the okapi.The giraffes range extends from Chad to South Africa. Although the Okapi is much shorter than the giraffe, it also has a long neck and eats leaves and both animals have long tongues and skin-covered horns. The giraffes ancestors first appeared in central Asia about 15 million years ago, however, the earliest fossil records of the giraffe itself, from Israel and Africa, date back about 1.5 million years.Male giraffes are called ‘Bulls’, female giraffes are called ‘Cows’ and baby giraffes are called ‘Calves’."
+        },
+        {
+            "name": "Zebra",
+            "picture": "images/zebra.jpg",
+            "description": "Zebras are equids – members of the horse family (Equidae) and are medium sized, odd-toed ungulates. Zebras are native to southern and central Africa. Although zebras are very adaptable animals as far as their habitats are concerned, most zebras live in grasslands and savannas. The Grevy’s zebra (Equus grevyi) prefers to live in sub desert and arid grasslands.Zebras were the second species to diverge from the earliest proto-horses, after the asses, around 4 million years ago. The Grevy’s zebra is believed to have been the first zebra species to emerge."
+        },
+          {
+            "name": "Crocodile",
+            "picture": "images/crocodile.jpg",
+            "description": "Crocodile are equids – members of the horse family (Equidae) and are medium sized, odd-toed ungulates. Zebras are native to southern and central Africa. Although zebras are very adaptable animals as far as their habitats are concerned, most zebras live in grasslands and savannas. The Grevy’s zebra (Equus grevyi) prefers to live in sub desert and arid grasslands.Zebras were the second species to diverge from the earliest proto-horses, after the asses, around 4 million years ago. The Grevy’s zebra is believed to have been the first zebra species to emerge."
+        },  {
+            "name": "Rhinosorus",
+            "picture": "images/rhinosorus.jpg",
+            "description": "Rhinosorus are equids – members of the horse family (Equidae) and are medium sized, odd-toed ungulates. Zebras are native to southern and central Africa. Although zebras are very adaptable animals as far as their habitats are concerned, most zebras live in grasslands and savannas. The Grevy’s zebra (Equus grevyi) prefers to live in sub desert and arid grasslands.Zebras were the second species to diverge from the earliest proto-horses, after the asses, around 4 million years ago. The Grevy’s zebra is believed to have been the first zebra species to emerge."
+        }
+    ]
+}
