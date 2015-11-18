@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/first.css">
+
+    <title>MJ's First-App // Phase 2</title>
+</head>
+
+<header>
+    <h1>"MJ's NHL Central Division"</h1>
+</header>
+
+<body>
+    <div id="controls">
+        
+<!--         <button type="button" id="get-all">Get All Teams</button>-->
+                <button id="ajax" class="btn btn-default">Ajax Load</button>
+                <button id="load" class="btn btn-default">Local Load</button>
+                <button id="save" class="btn btn-default">Local Save</button>
+                <button id="clear" class="btn btn-default">Local Clear</button>
+    </div>
+
+        <form action="" method="get" id="search-form">
+
+            <div>
+                <label for="q">Search Teams</label>
+                <input type="search" id="q" name="q" required placeholder="type a name" autocomplete="off">
+            </div>
+
+            <div class="button-group">
+                <button type="submit" id="search-btn">Search</button>
+            </div>
+           
+        </form>
+         <div id="insert" aria-atomic="true" aria-live="off" aria-relevant="additions removals">
+
+            </div>
+
+            <script src="script.js"></script>
+       
+</body>
+
+</html>
