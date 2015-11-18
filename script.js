@@ -1,22 +1,23 @@
 (function () {
 
     var Teams = null;
-    
+
     var localStorageKey = ("");
     var ajax = document.getElementById("ajax");
     var load = document.getElementById("load");
     var save = document.getElementById("save");
     var clear = document.getElementById("clear");
+
     var targetArea = document.getElementById("Teams");
+
     var container = Teams;
     var centralCount = container;
     var target = document.getElementById("insert"),
-        
+
         i;
 
-    if (Teams> 0) {
-        for (i = 0; i < Teams; i = i + 1)
-        {
+    if (Teams > 0) {
+        for (i = 0; i < Teams; i = i + 1) {
 
             var Teams = container[i],
                 location = Teams.location,
@@ -42,20 +43,22 @@
         } else if (window.ActiveXObject) {
             xhr = new ActiveXObject("Msxm12.XMLHTTP");
         }
-        
+
         return xhr;
     }
 
 
-    function ajaxCall(dataURL, outputElement, callback) {
+    function ajaxCall(data, outputElement, callback) {
 
         var request = getHTTPObject();
         target.innerHTML = "Loading...";
         request.onreadystatechange = function () {
 
-            if (request.readyState === 4 && request.status === 200) {
+            if (request.readyState === 4 && request.status === 200)
 
-                ajax = JSON.parse(request.responseText);
+            {
+
+                //ajax = JSON.parse(request.responseText);
 
                 if (typeof callback === showTeamsData) {
                     callback(Teams);
@@ -65,7 +68,7 @@
                 text = request.responseText;
                 data = JSON.parse(text);
                 showTeamsData();
-                
+
             }
         }
 
@@ -107,7 +110,7 @@
     ajax.addEventListener("click", ajaxCall, false);
     load.addEventListener("click", loadLocalData, false);
     save.addEventListener("click", saveDataLocally, false);
-//    clear.addEventListener("click", clearDataLocally, false);
+    //clear.addEventListener("click", clearDataLocally, false);
 
     function showTeamsData() {
 
@@ -127,10 +130,11 @@
 
     (function () {
 
-        var searchForm = document.getElementById("search-form"),
-            searchField = document.getElementById("q"),
+        var searchForm = document.getElementById("search"),
+            ajax = document.getElementById("ajax"),
             getAllButton = document.getElementById("get-all"),
-            target = document.getElementById("output");
+            local = document.getElementById("local"),
+            clear = document.getElementById("clear");
 
         var Teams = {
 
@@ -146,7 +150,7 @@
                         i;
 
                     target.innerHTML = "";
-                    
+
                     if (count > 0 && SearchValue !== "") {
 
                         for (i = 0; i < count; i = i + 1) {
@@ -166,18 +170,18 @@
 
                 var output = document.getElementById("output");
 
-                ajaxCall('data/firstApps.json', output, function (data) {
+                ajaxCall('data/Teams.json', output, function (data) {
 
                     var Teams = data.Teams,
-                        count = Teams.length,
+                        Teams = Teams.length,
                         i;
 
                     target.innerHTML = "";
-                    
+
                     if (Teams > 0) {
-                        
+
                         for (i = 0; i < Teams; i = i + 1) {
-                            
+
                             var getAllContacts = Teams[i];
 
                         }
@@ -185,36 +189,14 @@
                 });
             },
 
-
-            setActiveSection: function () {
-            this.parentNode.setAttribute("class", "active");
-            },
-            
-            removeActiveSection: function () {
-            this.parentNode.removeAttribute("class");
-
-            },
-            addHoverClass: function () {
-            searchForm.setAttribute("class", "hovering");
-
-            },
-            removeHoverClass: function () {
-            searchForm.removeAttribute("class");
-
-            }
         }
-        
-        ajax.addEventListener(Teams.getAllTeams, false);
-        ajax.addEventListener(Teams.getAllTeams, false);
-        load.addEventListener("", Teams.getAllTeams, false);
-        searchField.addEventListener("keyup", Teams.search, false);
-        searchField.addEventListener("focus", Teams.setActiveSection, false);
-        searchField.addEventListener("blur", Teams.removeActiveSection, false);
+
+
+        ajax.addEventListener(Teams.toLocaleString, false);
+        load.addEventListener(Teams.getAllTeams, false);
+        clear.addEventListener("", false)
         getAllButton.addEventListener("click", Teams.getAllTeams, false);
-        searchForm.addEventListener("mouseover", Teams.addHoverClass, false);
-        searchForm.addEventListener("mouseout", Teams.removeHoverClass, false);
-        searchForm.addEventListener("submit", Teams.search, false);
-        
+
     }());
 
 }());
