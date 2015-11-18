@@ -14,11 +14,14 @@
 </header>
 
 <body>
-    
-    <div id="insert"></div>
-    <div id="output"></div>
-
     <div id="controls">
+        
+<!--         <button type="button" id="get-all">Get All Teams</button>-->
+                <button id="ajax" class="btn btn-default">Ajax Load</button>
+                <button id="load" class="btn btn-default">Local Load</button>
+                <button id="save" class="btn btn-default">Local Save</button>
+                <button id="clear" class="btn btn-default">Local Clear</button>
+    </div>
 
         <form action="" method="get" id="search-form">
 
@@ -29,19 +32,15 @@
 
             <div class="button-group">
                 <button type="submit" id="search-btn">Search</button>
-                <button type="button" id="get-all">Get All Teams</button>
-                <button id="ajax" class="btn btn-default">Ajax Load</button>
-                <button id="load" class="btn btn-default">Local Load</button>
-                <button id="save" class="btn btn-default">Local Save</button>
-                <button id="clear" class="btn btn-default">Local Clear</button>
             </div>
-
-            <div id="Teams" aria-atomic="true" aria-live="off" aria-relevant="additions removals">
+           
+        </form>
+         <div id="insert" aria-atomic="true" aria-live="off" aria-relevant="additions removals">
 
             </div>
 
             <script src="script.js"></script>
-
+       
 </body>
 
 </html>

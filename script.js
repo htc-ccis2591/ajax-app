@@ -1,38 +1,26 @@
 (function () {
 
     var Teams = null;
-
-    var localStorageKey = ("");
+    var localStorageKey = ("localStorage");
     var ajax = document.getElementById("ajax");
     var load = document.getElementById("load");
     var save = document.getElementById("save");
     var clear = document.getElementById("clear");
-
     var targetArea = document.getElementById("Teams");
-
-    var container = Teams;
-    var centralCount = container;
     var target = document.getElementById("insert"),
-
         i;
 
-    if (Teams > 0) {
-        for (i = 0; i < Teams; i = i + 1) {
-
-            var Teams = container[i],
-                location = Teams.location,
-                image = Teams.image,
-                arena = 'Arena: ' + Teams.arena,
-                manager = 'Manager: ' + Teams.manager,
-                coach = 'Coach: ' + Teams.coach,
-                description = Teams.description,
-                link = Teams.link
-
-            target.innerHTML += '<h1> ' + Teams.Teams + '</h1>' +
-
-                '<img src=" ' + image + '"></img> <h2>' + location + ' </h2> <h2>' + arena + ' </h2> <h2>' + manager + ' </h2> <h2>' + coach + ' </h2> <h3>' + description + ' </h3> <h4>' + link + ' </h4>';
-
-        }
+    function buildTeamData(OneTeam) {
+        var location = OneTeam.location;
+        var image = OneTeam.image;
+        var arena = 'Arena: ' + OneTeam.arena;
+        var manager = 'Manager: ' + OneTeam.manager;
+        var coach = 'Coach: ' + OneTeam.coach;
+        var description = OneTeam.description;
+        var link = OneTeam.link;
+        var HTML = '<h1> ' + OneTeam.team + '</h1>' +
+            '<img src=" ' + image + '"></img> <h2>' + location + ' </h2> <h2>' + arena + ' </h2> <h2>' + manager + ' </h2> <h2>' + coach + ' </h2> <h3>' + description + ' </h3> <h4>' + link + ' </h4>';
+        return HTML;
     }
 
     function getHTTPObject() {
@@ -43,38 +31,27 @@
         } else if (window.ActiveXObject) {
             xhr = new ActiveXObject("Msxm12.XMLHTTP");
         }
-
         return xhr;
     }
 
-
-    function ajaxCall(data, outputElement, callback) {
+    function ajaxCall(url, outputElement, callback) {
 
         var request = getHTTPObject();
-        target.innerHTML = "Loading...";
+        outputElement.innerHTML = "Loading...";
         request.onreadystatechange = function () {
 
             if (request.readyState === 4 && request.status === 200)
 
             {
-
-                //ajax = JSON.parse(request.responseText);
-
-                if (typeof callback === showTeamsData) {
-                    callback(Teams);
-
-                }
-
                 text = request.responseText;
                 data = JSON.parse(text);
-                showTeamsData();
-
+                Teams = data.Teams;
+                callback(outputElement);
             }
         }
 
         request.open("GET", "data/Teams.json", true);
         request.send(null);
-
     }
 
     function loadLocalData() {
@@ -105,98 +82,62 @@
         }
     }
 
-    targetArea.innerHTML = "Click a button to Load Data";
+    function showTeamsData(targetArea) {
 
-    ajax.addEventListener("click", ajaxCall, false);
-    load.addEventListener("click", loadLocalData, false);
-    save.addEventListener("click", saveDataLocally, false);
-    //clear.addEventListener("click", clearDataLocally, false);
-
-    function showTeamsData() {
-
-        var Teams = showTeamsData.toLocaleString;
-        var i, first;
+        var i, OneTeam;
 
         for (i = 0; i < Teams.length; i++) {
             if (i === 0) {
                 targetArea.innerHTML = "";
             }
 
-            Teams = Teams[i];
-            targetArea.appendChild(buildTeamsData(Teams));
-
+            OneTeam = Teams[i];
+            targetArea.innerHTML += buildTeamData(OneTeam);
         }
     }
 
-    (function () {
+    var TeamsApp = {
 
-        var searchForm = document.getElementById("search"),
-            ajax = document.getElementById("ajax"),
-            getAllButton = document.getElementById("get-all"),
-            local = document.getElementById("local"),
-            clear = document.getElementById("clear");
+        search: function (event) {
 
-        var Teams = {
+            var output = document.getElementById("output");
 
-            search: function (event) {
+            ajaxCall('data/firstApps.json', output, function (data) {
 
-                var output = document.getElementById("output");
+                var SearchValue = searchField.value,
+                    x ``
+                Teams = data.length,
+                    count = Teams.length,
+                    i;
 
-                ajaxCall('data/firstApps.json', output, function (data) {
+                target.innerHTML = "";
 
-                    var SearchValue = searchField.value,
-                        Teams = data.length,
-                        count = Teams.length,
-                        i;
+                if (count > 0 && SearchValue !== "") {
 
-                    target.innerHTML = "";
+                    for (i = 0; i < count; i = i + 1) {
 
-                    if (count > 0 && SearchValue !== "") {
+                        var obj = Teams[i],
+                            isItFound = obj.name.indexOf(SearchValue);
 
-                        for (i = 0; i < count; i = i + 1) {
-
-                            var obj = Teams[i],
-                                isItFound = obj.name.indexOf(SearchValue);
-
-                            if (isItFound !== -1) {
-                                target.innerHTML += '<p>' + obj.name + ', <a href=" ' + obj.description + '">' + obj.coach + '</a><p>';
-                            }
+                        if (isItFound !== -1) {
+                            target.innerHTML += '<p>' + obj.name + ', <a href=" ' + obj.description + '">' + obj.coach + '</a><p>';
                         }
                     }
-                });
-            },
+                }
+            });
+        },
 
-            getAllTeams: function () {
+        getAllTeams: function () {
 
-                var output = document.getElementById("output");
+            var output = document.getElementById("insert");
 
-                ajaxCall('data/Teams.json', output, function (data) {
+            ajaxCall('data/Teams.json', output, showTeamsData);
 
-                    var Teams = data.Teams,
-                        Teams = Teams.length,
-                        i;
+        },
+    }
 
-                    target.innerHTML = "";
-
-                    if (Teams > 0) {
-
-                        for (i = 0; i < Teams; i = i + 1) {
-
-                            var getAllContacts = Teams[i];
-
-                        }
-                    }
-                });
-            },
-
-        }
-
-
-        ajax.addEventListener(Teams.toLocaleString, false);
-        load.addEventListener(Teams.getAllTeams, false);
-        clear.addEventListener("", false)
-        getAllButton.addEventListener("click", Teams.getAllTeams, false);
-
-    }());
-
+    ajax.addEventListener("click", TeamsApp.getAllTeams, false);
+    load.addEventListener("click", loadLocalData, false);
+    save.addEventListener("click", saveDataLocally, false);
+    // add clear
 }());
