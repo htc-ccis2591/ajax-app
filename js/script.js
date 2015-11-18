@@ -149,22 +149,44 @@ outputElement.innerHTML = "Data Loading";
                  
             target.innerHTML = "";
             var i;
+                 
+                
+                    
             
             if (count > 0){
                 
                 for(i = 0; i < count; i ++){
                     
                     var obj = listGames[i];
-//                    var labels = $(["#item1", "#item2", "#item3", "#item4", "#item5"]);
-//                    var labelObj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
-//                    jQuery.each(labels, function(i, val){
-//                       
-//                        $(labels.title).text(obj.title);
-//                        return (val === "five"); 
-//                    });
-                    $("#item" + i).text(obj.title);
-                   
                     
+                    $("#btnVote").click(function() {
+                        
+                       if($("#rad1" ).is(":checked")){
+                           $("#radioArea").text("Good choice Binding of Isaac is a great game!");
+                       }
+                         if($("#rad2" ).is(":checked")){
+                           $("#radioArea").text("Good choice Axiom Verge is a great game!");
+                         }
+                          if($("#rad3" ).is(":checked")){
+                           $("#radioArea").text("Good choice Shovel Knight is a great game!");
+                          }
+                          if($("#rad4" ).is(":checked")){
+                           $("#radioArea").text("Good choice Hitogeta Happa is a great game!");
+                          }
+                          if($("#rad5" ).is(":checked")){
+                           $("#radioArea").text("Good choice Jamestown is a great game!");
+                          }
+                      
+                     
+//                          else{
+//                            $("#radioArea").text("ERROR you must select a game to vote");
+//                        }
+                   });
+                  
+              
+                    $("#item" + i).text(obj.title);
+                  
+                  
                     
                       target = document.getElementById("output");
                         var gTitle = document.createElement("p");
@@ -201,6 +223,14 @@ outputElement.innerHTML = "Data Loading";
 //            end ajax callS
         
         },
+//            radioButton : function(){
+//            $("#btnVote").click(function() {
+//                       if($("#rad1").is(":checked")){
+//                           $("#radioArea").append("<p>" + "Good choice" + obj.title + "is a great game!" + "<p/>");
+//                       }
+//                   });
+//            },
+                    
         localSave : function() {
             var stringData = JSON.stringify(gameListMethod.gameData)
             localStorage.setItem("saveobject",stringData);
