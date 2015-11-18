@@ -24,6 +24,15 @@
             "name": "Zebra",
             "picture": "images/zebra.jpg",
             "description": "Zebras are equids – members of the horse family (Equidae) and are medium sized, odd-toed ungulates. Zebras are native to southern and central Africa. Although zebras are very adaptable animals as far as their habitats are concerned, most zebras live in grasslands and savannas. The Grevy’s zebra (Equus grevyi) prefers to live in sub desert and arid grasslands.Zebras were the second species to diverge from the earliest proto-horses, after the asses, around 4 million years ago. The Grevy’s zebra is believed to have been the first zebra species to emerge."
+        },
+          {
+            "name": "Crocodile",
+            "picture": "images/crocodile.jpg",
+            "description": "Crocodile are equids – members of the horse family (Equidae) and are medium sized, odd-toed ungulates. Zebras are native to southern and central Africa. Although zebras are very adaptable animals as far as their habitats are concerned, most zebras live in grasslands and savannas. The Grevy’s zebra (Equus grevyi) prefers to live in sub desert and arid grasslands.Zebras were the second species to diverge from the earliest proto-horses, after the asses, around 4 million years ago. The Grevy’s zebra is believed to have been the first zebra species to emerge."
+        },  {
+            "name": "Rhinosorus",
+            "picture": "images/rhinosorus.jpg",
+            "description": "Rhinosorus are equids – members of the horse family (Equidae) and are medium sized, odd-toed ungulates. Zebras are native to southern and central Africa. Although zebras are very adaptable animals as far as their habitats are concerned, most zebras live in grasslands and savannas. The Grevy’s zebra (Equus grevyi) prefers to live in sub desert and arid grasslands.Zebras were the second species to diverge from the earliest proto-horses, after the asses, around 4 million years ago. The Grevy’s zebra is believed to have been the first zebra species to emerge."
         }
     ]
 }
