@@ -1,4 +1,4 @@
-$('#save').click(function () {
+$('#load').click(function () {
     // add loading image to div
     $('#loading').html('<img src="loading.gif"> loading...');
     
@@ -6,7 +6,7 @@ $('#save').click(function () {
     $.ajax({
         type: "GET",
         dataType: "json",
-        url: "https://api.github.com/users/jveldboom",
+        url: "https://nhl.com",
         success: function (d) {
             // replace div's content with returned data
             $('#loading').html(d);
@@ -15,3 +15,5 @@ $('#save').click(function () {
 });
 
 //$.ajax(Teams.json)
+
+localStorage.clear();

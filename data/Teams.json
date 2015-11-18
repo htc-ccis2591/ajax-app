@@ -83,7 +83,17 @@
                 "description": "Lead by captain Andrew Ladd the Jets are hoping to make a return to the playoffs in 2015-16",
                 "link": ""
 
-             }
+             },
+            {
+            "team": "X!",
+                "location": "gonna give it to ya.",
+                "arena": "you may know me from 'Pimp My Ride'",
+                "manager": "self-managed",
+                "coach": "self-coached",
+                "description": "They're all going to laugh at you!",
+            "image": "images/x.jpg",
+                "link": ""
+            }
                 ]
 
     }

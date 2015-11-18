@@ -70,6 +70,7 @@
         }
     }
 
+
     function saveDataLocally() {
         if (typeof (localStorage) === 'undefined') {
             targetArea.innerHTML = "Sorry, local storage is not supported for this browser.";
@@ -81,6 +82,16 @@
             }
         }
     }
+    
+    function clearDataLocally() {
+            if(localStorage.saveDataLocally === undefined){
+               target.innerHTML = "No data saved!"
+               }
+            else{
+             localStorage.removeItem("saveDataLocally");
+        
+    }
+}
 
     function showTeamsData(targetArea) {
 
@@ -139,5 +150,6 @@
     ajax.addEventListener("click", TeamsApp.getAllTeams, false);
     load.addEventListener("click", loadLocalData, false);
     save.addEventListener("click", saveDataLocally, false);
-    // add clear
+    clear.addEventListener("click", clearDataLocally, false);
+
 }());
