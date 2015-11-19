@@ -1,0 +1,13 @@
+{
+  "promotions" :
+    [
+      {
+        "key" : "coupon25off",
+        "description" : "Book now and get 25% off!"
+      },
+      {
+        "key" : "freemeals",
+        "description" : "Promotion this month: reserve your room today and get 2 free dinner buffets!"
+      }
+    ]
+}

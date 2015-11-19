@@ -1,0 +1,40 @@
+{
+    "touristSite" : [
+        {
+            "name": "Phnom Penh",
+            "location": "The Capital of Cambodia",
+            "image": "images/phnom penh 1.jpg",
+            "description": " Phnom Penh is the capital of Cambodia. It was taken the name from Wat Phnom known as a lady Daun Penh.",
+            "email": "phnompenhtourist@petersrun.com"
+        },
+        {
+            "name": "Angkor Wat",
+            "location": "Siem Reap Province",
+            "image": "images/Angkor wat 1.jpg",
+            "description": " Angkor Wat is the second wonder of the world tourist. It recently ranked the top number one tourist place in Asia.",
+            "email": "angkorwattourist@petersrun.com"
+        },
+        {
+            "name": "Angkor Tom",
+            "location": "Siem Reap Province",
+            "image": "images/Angkor tom 1.jpg",
+            "description": " Angkor tom is another temple located in the same city as Angkor Wat, known by the other name called Bayon Temple.",
+            "email": "angkortomtourist@petersrun.com"
+        },
+                {
+            "name": "Kirirom",
+            "location": "Kampong Speu Province",
+            "image": "images/Kirirom 1.jpg",
+            "description": " Kirirom is a national park, water fall and camping area. It also known as 'Happy Mountain'.The rolling hills road are zigzagged along sided with the pine tree that you can not find any where in Cambodia.",
+            "email": "kiriromtourist@petersrun.com"
+        },
+        {
+            "name": "Sangsaa Private Island",
+            "location": "Sihanouk Ville City",
+            "image": "images/Sangsa island 3.jpg",
+            "description": " Sangsa Private Island is a new place discovered by a couple from Austalia. It is a sustainable luxury on a fantasy island in Asia located in the private island off the coast of Sihanouk Ville.  ",
+            "email": "sangsaatourist@petersrun.com"
+        }        
+            
+    ]
+}

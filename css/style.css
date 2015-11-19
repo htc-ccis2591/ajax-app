@@ -1,0 +1,54 @@
+/* type selectors */
+article, aside, figure, figcaption, footer, header, nav, section {
+    display: block;
+}
+
+body {color: #666666; 
+	font-family: Papyrus, fantasy;
+    max-width: 1200px;}
+
+header { background-color: #000033; color: #FFFFFF; margin-top: 0px;
+    background-image: url(../images/SR1.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: right;
+    text-align: center;
+    font-weight: bold;
+}
+h1 { padding: 10px; margin-bottom: 0px;}
+#style {margin-bottom: 20px;}
+
+aside {
+	margin: 20px 5px 5px 5px;
+	width: 270px;
+	float: right;
+    border: 2px solid #660033;
+}
+
+section {
+	padding: 15px 25px;
+}
+h2 { color: #660000; }
+
+.Tourist Sites-item {
+    font-size: 120%;
+	cursor: pointer;
+}
+
+img {max-width:70%; height: auto; padding-bottom: 5px;
+    display: block;
+}
+
+.hide {
+	display: none;
+}
+
+
+ul {
+	padding-left: 45px; 
+}
+li {
+	padding-bottom: .25em;
+}
+
+#theImage { visibility: hidden; }
