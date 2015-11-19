@@ -87,8 +87,9 @@ outputElement.innerHTML = "Data Loading";
                     if (isItFound !== -1){
                      
 
-                        target = document.getElementById("output");
-                        var gTitle = document.createElement("p");
+//                        target = document.getElementById("output");
+                        $("#output").append("<p></p>");
+//                        var gTitle = document.createElement("p");
                         
                         var gLink = document.createElement("a");
                         var linkTxtNode = document.createTextNode("Steam Page");
@@ -138,7 +139,7 @@ outputElement.innerHTML = "Data Loading";
 //          $("#item1").text(obj.title);  
 //        },
         getAllTitles : function(){
-                 var output = document.getElementById("output");
+            var output = document.getElementById("output");
                  
              ajaxCall('data/games.json', output, function (data) {
              gameListMethod.gameData = data;    
@@ -154,38 +155,48 @@ outputElement.innerHTML = "Data Loading";
                     
             
             if (count > 0){
-                
+                          $("#btnVote").click(function() {
+                      var boolean = "false";
+                        
+                       if($("#rad1" ).is(":checked")){
+                          boolean = "true";
+                           $("#radioArea").text("Good choice Binding of Isaac is a great game!");
+                       }
+                         if($("#rad2" ).is(":checked")){
+                             boolean = "true";
+                           $("#radioArea").text("Good choice Axiom Verge is a great game!");
+                         }
+                          if($("#rad3" ).is(":checked")){
+                              boolean = "true";
+                           $("#radioArea").text("Good choice Shovel Knight is a great game!");
+                          }
+                          if($("#rad4" ).is(":checked")){
+                              boolean = "true";
+                           $("#radioArea").text("Good choice Hitogeta Happa is a great game!");
+                          }
+                          if($("#rad5" ).is(":checked")){
+                              boolean = "true";
+                           $("#radioArea").text("Good choice Jamestown is a great game!");
+                          }
+                              if(boolean === "false"){
+                                $("#radioArea").text("ERROR must select a game to vote").addClass("error");  
+                              }});
                 for(i = 0; i < count; i ++){
                     
                     var obj = listGames[i];
                     
-                    $("#btnVote").click(function() {
-                        
-                       if($("#rad1" ).is(":checked")){
-                           $("#radioArea").text("Good choice Binding of Isaac is a great game!");
-                       }
-                         if($("#rad2" ).is(":checked")){
-                           $("#radioArea").text("Good choice Axiom Verge is a great game!");
-                         }
-                          if($("#rad3" ).is(":checked")){
-                           $("#radioArea").text("Good choice Shovel Knight is a great game!");
-                          }
-                          if($("#rad4" ).is(":checked")){
-                           $("#radioArea").text("Good choice Hitogeta Happa is a great game!");
-                          }
-                          if($("#rad5" ).is(":checked")){
-                           $("#radioArea").text("Good choice Jamestown is a great game!");
-                          }
+         
+                          
                       
                      
 //                          else{
 //                            $("#radioArea").text("ERROR you must select a game to vote");
 //                        }
-                   });
+                   
                   
-              
+                    
                     $("#item" + i).text(obj.title);
-                  
+                    
                   
                     
                       target = document.getElementById("output");
@@ -278,6 +289,7 @@ outputElement.innerHTML = "Data Loading";
 
         localLoad.addEventListener("click", gameListMethod.localLoad, false);
          
+        
         
 //        saveItem.addEventListener("click",  
     
