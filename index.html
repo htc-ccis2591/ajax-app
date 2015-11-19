@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="uft-8">
+        <title>Top 5 Steam Games</title>
+        <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+       
+        <h1>Ryan's Top 5 Steam Games</h1>
+        
+         
+    </head>
+        <body>
+         
+            
+            <form action="" method="get" id="search-form">
+                <div>
+                <label>Search by Title</label>
+                <input type="search" id="sInput" required placeholder="type a title" autocomplete="off">
+                    <button id="btnSearch" type="submit">Search</button>
+                    
+                </div>
+           
+                <div>
+            <button  id="btnAllGames" type="button">Get All Games</button>
+<!--
+            <button hidden="true" id="btnOrByTitle">Order by Title</button>
+            <button hidden="true" id="btnOrByGenre">Order by Genre</button>
+            <button hidden="true" id="btnOrByRank">Order by Rank</button>
+-->
+            <button id="btnAjaxLoad" type="button">Ajax Load</button>
+            <button id="btnLocalLoad" type="button">Local Load</button>
+            <button id="btnLocalSave" type="button">Local Save</button>
+            <button id="btnLocalClear" type="button">Local Clear</button>
+                </div>
+                <div id="radioArea">
+                    <label>Choose your favorite game</label>
+                    
+                    <br><br/>
+                    <label id="item0">Item1:</label>
+                    <input type="radio" id="rad1" name="itemBox">
+                    <label id="item1">Item2:</label>
+                    <input type="radio" id="rad2" name="itemBox">
+                    <label id="item2">Item3:</label>
+                    <input type="radio" id="rad3" name="itemBox">
+                    <label id="item3">Item4:</label>
+                    <input type="radio" id="rad4" name="itemBox">
+                    <label id="item4">Item5:</label>
+                    <input type="radio" id="rad5" name="itemBox">
+                    <button id="btnVote" type="button">Vote</button>
+                </div>
+            </form>
+         <div id="output" aria-atomic="true" aria-live="polite"></div>
+ 
+            <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>            
+<script src="js/script.js"></script>            
+       </body>
+    
+</html>
