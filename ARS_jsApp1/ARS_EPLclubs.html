@@ -5,8 +5,23 @@
     <title>ARS App | English Premier Leauge Clubs</title>
 </head>
 <body>
-    <h1>Clubs</h1>
-    <div id="clubs"></div>
-    <script src="ARS_EPL.js"></script>
+        <header>
+            <h2>English Premier League Clubs</h2>
+        </header>
+        <div id="container">
+            <div id="navbar">
+                <label id="searchLabel" class="hide">Search :
+                    <br><input type="search" id="searchBox" name="search" size="12">   
+                </label>
+                <button type="submit" id="ajaxLoadButton"><strong>Ajax Load</strong></button>
+                <button type="submit" id="localLoadButton"><strong>Local Load</strong></button>
+                <button type="submit" id="localSaveButton"><strong>Local Save</strong></button>
+                <button type="submit" id="localClearButton"><strong>Local Clear</strong></button>
+            </div>
+            <div id="fullList"></div>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+        <script type="text/javascript" language="Javascript"></script>    
+        <script src="js/ARS_EPL.js"></script>
 </body>
 </html>
