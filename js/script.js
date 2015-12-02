@@ -19,6 +19,7 @@
                     });
 
                 },
+            
                 buildHTML: function(){
                     var movies = $("#movies");
                     movies.empty();
@@ -37,9 +38,9 @@
         };
             $("#ajax").click(function () {
                 $("#movies").load(kevinSmithApp.loadContent());
+                
             });
             $("#save").click(function () {
-                //var saveLocal = (function(){
                 var string = JSON.stringify(kevinSmithApp.movieData);
                 localStorage.setItem(kevinSmithApp.localStorageKey, string);
             });
@@ -47,10 +48,61 @@
                 var string = localStorage.getItem(kevinSmithApp.localStorageKey);
                 kevinSmithApp.movieData = JSON.parse(string);
                 kevinSmithApp.buildHTML();
-                
+                $("#ul").show(10000);
             });
             $("#clear").click(function () {
                 localStorage.removeItem(kevinSmithApp.localStorageKey);
+            });
+            $(function() {
+                var availableTags = [
+                    "Clerks",
+                    "Mallrats",
+                    "Chasing Amy",
+                    "Dogma",
+                    "Jay and Silent Bob Strike Back",
+                    "Jersey Girl",
+                    "Clerks II",
+                    "Kevin Smith",
+                    "Scott Mosier",
+                    "1994",
+                    "1995",
+                    "1997",
+                    "1999",
+                    "2001",
+                    "2004",
+                    "2006",
+                    "Brian O'Halloran",
+                    "Jeff Anderson",
+                    "Marilyn Ghigliotti",
+                    "Lisa Spoonauer",
+                    "Jason Mewes",
+                    "Walt Flanagan",
+                    "Shannen Doherty",
+                    "Jeremy London",
+                    "Jason Lee",
+                    "Claire Forlani",
+                    "Ben Affleck",
+                    "Joey Lauren Adams",
+                    "Dwight Ewell",
+                    "Linda Fiorentino",
+                    "Matt Damon",
+                    "Alan Rickman",
+                    "Chris Rock",
+                    "Salma Hayek",
+                    "Shannon Elizabeth",
+                    "Eliza Dushku",
+                    "Will Ferrell",
+                    "Jennifer Schwalbach",
+                    "Jennifer Lopez",
+                    "Liv Tyler",
+                    "George Carlin",
+                    "Steven Root",
+                    "Rosario Dawson",
+                    "Trevor Fehrman"
+                ];
+                $( "#tags" ).autocomplete({
+                    source: availableTags
+                });
             });
         });
         }())
